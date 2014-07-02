@@ -16,9 +16,9 @@ using namespace std;
 /*
 gnuplot
 reset
-set term gif animate
+set terminal gif
 set output "Diffusion.gif"
-stats 'datafile' nooutput
+stats "Diffusion.txt" nooutput
 set pointsize 3
 unset xtic
 unset ytic
