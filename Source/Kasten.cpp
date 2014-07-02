@@ -2,7 +2,6 @@
  * Kasten.cpp
  *
  *  Created on: 19.06.2014
- *      Author: frederik
  */
 
 #include "Kasten.h"
