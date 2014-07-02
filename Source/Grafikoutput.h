@@ -13,16 +13,21 @@
 
 using namespace std;
 
-//gnuplot
-//reset
-//set term gif animate
-//set output "Diffusion.gif"
-//n=    #n frames
-//set xrange [-Kastenbreite/2:Kastenbreite/2]
-//i=0
-//load "animate.gnuplot"
-//set output
-
+/*
+gnuplot
+reset
+set term gif animate
+set output "Diffusion.gif"
+stats 'datafile' nooutput
+set pointsize 3
+unset xtic
+unset ytic
+set xrange [-Kasten.get_size_x()/2:Kasten.get_size_x()/2]
+do for [i=1:int(STATS_blocks)] {
+    plot 'Diffusion.txt'
+}
+set output
+*/
 
 
 
