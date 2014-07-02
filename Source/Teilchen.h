@@ -2,7 +2,6 @@
  * Teilchen.h
  *
  *  Created on: 01.07.2014
- *      Author: arrow13
  */
 
 #ifndef TEILCHEN_H_
