@@ -14,9 +14,9 @@
 using namespace std;
 
 /*
-gnuplot
+gnuplot 
 reset
-set terminal gif
+set terminal gif animate delay "dt"
 set output "Diffusion.gif"
 stats "Diffusion.txt" nooutput
 unset xtic
@@ -27,7 +27,7 @@ set yrange [-Kasten.get_size_y()/2:Kasten.get_size_y()/2]
 do for [i=1:int(STATS_blocks)] {
 set arrow from 0,Spaltgröße/2 to 0,Kasten.get_size_y()/2 nohead
 set arrow from 0,-Spaltgröße/2 to 0,-Kasten.get_size_y()/2 nohead
-    plot 'Diffusion.txt' using 1:2 index i-1 with points pointsize "Teilchen.radius oder Default" pointtype 19
+    plot 'Diffusion.txt' using 1:2 index i-1 with points pointsize "Teilchen.radius" pointtype 19
 }
 set output
 */
