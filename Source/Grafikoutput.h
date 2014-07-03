@@ -28,7 +28,7 @@ set yrange [-Kasten.get_size_y()/2:Kasten.get_size_y()/2]
 do for [i=1:int(STATS_blocks)] {
 set arrow from 0,Spaltgröße/2 to 0,Kasten.get_size_y()/2 nohead
 set arrow from 0,-Spaltgröße/2 to 0,-Kasten.get_size_y()/2 nohead
-#mit den arrows können wir die Spalte einstellen
+#mit den arrows können wir die Spaltgröße einstellen
     plot 'Diffusion.txt' using 1:2:3 index i-1 with circles fs solid
 # Die dritte Spalte ist nun der Radius*Faktor, der von Gnuplot
 # abhängt, also können wir auch den Radius plotten
