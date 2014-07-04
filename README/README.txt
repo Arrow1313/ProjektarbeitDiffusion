@@ -5,6 +5,7 @@ Programm:
 ---------
 ProjektarbeitDiffusion geschrieben in C++
 Programmiert für Linux
+Der Grafikoutput benötigt Gnuplot Version 4.6
 
 Inhalt:
 -------
