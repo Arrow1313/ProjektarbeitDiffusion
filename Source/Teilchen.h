@@ -2,6 +2,7 @@
  * Teilchen.h
  *
  *  Created on: 19.06.2014
+ *      Author: frederik
  */
 
 #ifndef TEILCHEN_H_
@@ -21,6 +22,9 @@ private:
 public:
 
 	static double dt;
+	static int teilchen_kollisionen;
+	static int wand_kollisionen;
+	static int spalt_kollisionen;
 	//getter-Funktion
 	/** \brief Gibt an, ob das Teilchen schon eine Kollison hatte oder nicht
 	*
