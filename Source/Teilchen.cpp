@@ -2,6 +2,7 @@
  * Teilchen.cpp
  *
  *  Created on: 19.06.2014
+ *      Author: frederik
  */
 
 #include "Teilchen.h"
@@ -9,6 +10,9 @@
 #include "math.h"
 
 double Teilchen::dt = 0.1;
+int Teilchen::teilchen_kollisionen = 0;
+int Teilchen::wand_kollisionen = 0;
+int Teilchen::spalt_kollisionen = 0;
 
 Teilchen::Teilchen()
 :pos_x(0), pos_y(0), v_x(1), v_y(1), radius(1), masse(1), used(0)
@@ -46,29 +50,32 @@ double Teilchen::next_y_pos(){
 
 void Teilchen::Kasten_Kollision(Kasten k){
 
-	//std::cout << "pos_x: " << this->pos_x << "\tnext_x: " << this->next_x_pos() << std::endl;
 	if(this->pos_x > k.x_rechts && this->next_x_pos() <= k.x_rechts){
 		this->v_x *= -1;
 		this->used = 1;
 		std::cout << "kollison mit der Wand rechts" << std::endl;
+		this->wand_kollisionen++;
 	}
 
 	if(this->pos_x < k.x_links && this->next_x_pos() > k.x_links){
 		this->v_x *= -1;
 		this->used = 1;
 		std::cout << "kollison mit der Wand links" << std::endl;
+		this->wand_kollisionen++;
 	}
 
 	if(this->pos_y < k.y_oben && this->next_y_pos() > k.y_oben){
 		this->v_y *= -1;
 		this->used = 1;
 		std::cout << "kollison mit der Wand oben" << std::endl;
+		this->wand_kollisionen++;
 	}
 
 	if(this->pos_y > k.y_unten && this->next_y_pos() < k.y_unten){
 		this->v_y *= -1;
 		this->used = 1;
 		std::cout << "kollison mit der Wand unten" << std::endl;
+		this->wand_kollisionen++;
 	}
 }
 
@@ -104,6 +111,8 @@ void Teilchen::Teilchen_Kollision(Teilchen& t){
 		t.set_used(1);
 
 		std::cout << "Teilchen Kollison" << std::endl;
+
+		this->teilchen_kollisionen++;
 	}
 
 }
@@ -133,6 +142,8 @@ void Teilchen::Spalt_Kollision(Kasten k){
 			std::cout << "Kollsion Spalt" << std::endl;
 			this->v_x *= -1;
 			this->used = 1;
+
+			this->spalt_kollisionen++;
 		}
 	}
 }
