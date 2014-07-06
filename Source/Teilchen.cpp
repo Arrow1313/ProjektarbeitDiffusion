@@ -1,10 +1,3 @@
-/*
- * Teilchen.cpp
- *
- *  Created on: 19.06.2014
- *      Author: frederik
- */
-
 #include "Teilchen.h"
 #include "iostream"
 #include "math.h"
