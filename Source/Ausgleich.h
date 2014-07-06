@@ -1,8 +1,6 @@
 #ifndef AUSGLEICH_H_
 #define AUSGLEICH_H_
 
-bool Ausgeglichen(Teilchen [],int);
-void Teilchen_verteilung(Teilchen[],int,int&,int&);
 
 /**	\fn Ausgeglichen(Teilchen ar_t[], int anzahl)
  * 	Diese Funktion gibt TRUE zurück, wenn sich gleich viele Teilchen links und rechts befinden.
@@ -11,30 +9,7 @@ void Teilchen_verteilung(Teilchen[],int,int&,int&);
  * 	\param	Teilchen ar_t[] Der Array in dem die Teilchen gespeichert sind.
  * 	\param 	int anzahl Die Anzahl der Teilchen in dem Array.
  */
-
-bool Ausgeglichen(Teilchen ar_t [], int anzahl){
-	int ungerade;
-	int count = 0;
-
-	if(anzahl % 2){
-		ungerade = 1;
-	} else {
-		ungerade = 0;
-	}
-
-	for(int i = 0; i < anzahl; i++){
-		if(ar_t[i].get_pos_x() < 0){
-			count++;
-		}
-	}
-
-	if((count - ungerade == anzahl/2)
-		|| (count + ungerade == anzahl/2)){
-		return 1;
-	}
-
-	return 0;
-}
+bool Ausgeglichen(Teilchen [],int);
 
 /**	\fn Teilchen_verteilung(Teilchen ar_t[], int anzahl_teilchen, int& links, int& rechts)
  *
@@ -47,17 +22,6 @@ bool Ausgeglichen(Teilchen ar_t [], int anzahl){
  *
  */
 
-void Teilchen_verteilung(Teilchen ar_t[], int anzahl_teilchen, int& links, int& rechts){
-	int count_links = 0;
-
-	for(int i = 0; i < anzahl_teilchen; i++){
-			if(ar_t[i].get_pos_x() < 0){
-				count_links++;
-			}
-		}
-
-	links = count_links;
-	rechts = (anzahl_teilchen - count_links);
-}
+void Teilchen_verteilung(Teilchen[],int,int&,int&);
 
 #endif /* AUSGLEICH_H_ */
