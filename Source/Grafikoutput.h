@@ -1,10 +1,3 @@
-/*
- * Grafikoutput.h
- *
- *  Created on: 02.07.2014
- *      Author: frederik
- */
-
 #include "Kasten.h"
 #include "Teilchen.h"
 #include "fstream"
