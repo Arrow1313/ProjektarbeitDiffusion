@@ -2,6 +2,7 @@
  * Teilchengenerator.h
  *
  *  Created on: 30.06.2014
+ *      Author: frederik
  */
 
 #include "iostream"
