@@ -7,7 +7,7 @@ bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl){
 	bool wahl;
 
 	//Methode der Generierung erfragen und einleiten
-	cout << endl << "Sollen die Teilchen automatisch(0) erstllt werden oder von Hand(1) eingeben werden?" << endl;
+	cout << endl << "Sollen die Teilchen automatisch(0) erstellt werden oder von Hand(1) eingeben werden?" << endl;
 	cin >> wahl;
 
 	if(wahl){
@@ -29,15 +29,15 @@ void Eingabe(int anzahl,Teilchen ar_t[]){
 	for(int i = 0; i < anzahl; i++){
 
 		//Werte des Teilchens abfragen
-		cout << "Bitte geben Sie die x-pos ein: ";
+		cout << "Bitte geben Sie die x-Position ein: ";
 		cin >> pos_x;
-		cout << endl << "Bitte geben Sie die y-pos ein: ";
+		cout << endl << "Bitte geben Sie die y-Position ein: ";
 		cin >> pos_y;
 		cout << endl << "Bitte geben Sie die x-Geschwindigkeit ein: ";
 		cin >> v_x;
 		cout << endl << "Bitte geben Sie die y-Geschwindigkeit ein: ";
 		cin >> v_y;
-		cout << endl << "Bitte geben Sie den Rasius ein (Vorsicht bei großen Radien): ";
+		cout << endl << "Bitte geben Sie den Radius ein (Vorsicht bei großen Radien bzw. zu kleinen Radien): ";
 		cin >> radius;
 		cout << endl << "Bitte geben Sie die Masse ein: ";
 		cin >> masse;

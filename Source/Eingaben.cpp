@@ -21,10 +21,10 @@ Kasten Eingabe_Kasten(){
 		double y_laenge;
 		double spalt;
 
-		cout << "Welche Länge in x-Richtung soll der Kasten haben?" << endl;
+		cout << "Welche Länge soll der Kasten in x-Richtung haben?" << endl;
 		cin >> x_laenge;
 
-		cout << "Welche Länge in y-Richtung soll der Kastern haben?" << endl;
+		cout << "Welche Länge soll der Kasten in y-Richtung haben?" << endl;
 		cin >> y_laenge;
 
 		cout << "Welche Breite soll der Spalt haben?" << endl;
@@ -59,7 +59,7 @@ bool Plotten(){
 	cout << "Soll die nachfolgende Simulation Geplottet werden (1 = Ja, 0 = Nein)? Bitte beachten, dass Gnuplot 4.6 vorrausgesetzt wird." << endl;
 	cin >> plotten;
 	if(plotten){
-		cout << "Bitte passen Sie auf, dass der vorherige Plot überschrieben wird." << endl;
+		cout << "Achtung, der vorherige Plot wird überschrieben, falls er nicht aus dem Zielverzeichnis entfernt wurde." << endl;
 	}
 	return plotten;
 }

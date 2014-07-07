@@ -46,28 +46,28 @@ void Teilchen::Kasten_Kollision(Kasten k){
 	if(this->pos_x > k.x_rechts && this->next_x_pos() <= k.x_rechts){
 		this->v_x *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand rechts" << std::endl;
+		std::cout << "Kollison mit der Wand rechts" << std::endl;
 		this->wand_kollisionen++;
 	}
 
 	if(this->pos_x < k.x_links && this->next_x_pos() > k.x_links){
 		this->v_x *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand links" << std::endl;
+		std::cout << "Kollison mit der Wand links" << std::endl;
 		this->wand_kollisionen++;
 	}
 
 	if(this->pos_y < k.y_oben && this->next_y_pos() > k.y_oben){
 		this->v_y *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand oben" << std::endl;
+		std::cout << "Kollison mit der Wand oben" << std::endl;
 		this->wand_kollisionen++;
 	}
 
 	if(this->pos_y > k.y_unten && this->next_y_pos() < k.y_unten){
 		this->v_y *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand unten" << std::endl;
+		std::cout << "Kollison mit der Wand unten" << std::endl;
 		this->wand_kollisionen++;
 	}
 }
@@ -82,28 +82,28 @@ void Teilchen::Kasten_Kollison_radius(Kasten Kasten){
 	if(abstand_rechts < this->radius){
 		this->v_x *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand rechts" << std::endl;
+		std::cout << "Kollison mit der Wand rechts" << std::endl;
 		this->wand_kollisionen++;
 	}
 
 	if(abstand_links < this->radius){
 		this->v_x *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand links" << std::endl;
+		std::cout << "Kollison mit der Wand links" << std::endl;
 		this->wand_kollisionen++;
 	}
 
 	if(abstand_oben < this->radius){
 		this->v_y *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand oben" << std::endl;
+		std::cout << "Kollison mit der Wand oben" << std::endl;
 		this->wand_kollisionen++;
 	}
 
 	if(abstand_unten < this->radius){
 		this->v_y *= -1;
 		this->used = 1;
-		std::cout << "kollison mit der Wand unten" << std::endl;
+		std::cout << "Kollison mit der Wand unten" << std::endl;
 		this->wand_kollisionen++;
 	}
 }

@@ -90,7 +90,7 @@ int main() {
 		}
 
 		//Auswertung der Simulation
-		cout << "Es wurden: " << anzahl_schritte << " iterationen benötigt, bei einer Spaltbreite von: " << Kasten.get_size_spalt() << endl;
+		cout << "Es wurden: " << anzahl_schritte << " Iterationen benötigt, bei einer Spaltbreite von: " << Kasten.get_size_spalt() << endl;
 
 		ar_sim[k] = anzahl_schritte;
 
@@ -114,10 +114,10 @@ int main() {
 	anzahl_schritte_mittel /= anzahl_simulation;
 
 	//Ergebnisse ausgeben
-	cout << "Nach " << anzahl_simulation << " durchlaeufen der Simulation für " << anzahl_teilchen << " Teilchen"
-		 << " ergaben sich die folgenden Werte. Maximum der iterationen: " << anzahl_schritte_max << " Minimum der "
-		 << "iterationen: " << anzahl_schritte_min << " und ein Durchschnitt von: " << anzahl_schritte_mittel << endl
-		 << "Für eine anzahl von: " << anzahl_teilchen << endl;
+	cout << "Nach " << anzahl_simulation << " Durchlaeufen der Simulation für " << anzahl_teilchen << " Teilchen"
+		 << " ergaben sich die folgenden Werte: Maximum der benötigten Iterationen bis ein Ausgleich erreicht wurde: " << anzahl_schritte_max << " Minimum der "
+		 << "Iterationen bis ein Ausgleich erreicht wurde: " << anzahl_schritte_min << " und ein Mittelwert von " << anzahl_schritte_mittel << "benötigten Iterationen" << endl
+		 << "Für eine Anzahl von: " << anzahl_teilchen << "Teilchen" << endl;
 
 	return 0;
 }

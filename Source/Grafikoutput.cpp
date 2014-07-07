@@ -69,7 +69,7 @@ void Rahmendatei_verteilung(){
 			   << "set title \"Zeitliche Verteilung der Teilchen in den Kammern\""
 			   << "set terminal png size 1280,720" << endl
 			   << "set output \"Verteilung.png\"" << endl
-			   << "plot 'Verlauf.dat' using 1:2 title \"Anzahl der Teilchen auf der linke Seite\", 'Verlauf.dat' using 1:3 title \"Anzahl der Teilchen auf der linke Seite\" " << endl
+			   << "plot 'Verlauf.dat' using 1:2 title \"Anzahl der Teilchen auf der linken Seite\", 'Verlauf.dat' using 1:3 title \"Anzahl der Teilchen auf der linke Seite\" " << endl
 			   << "set output" << endl;
 
 		system("gnuplot rahmendatei.plot");
