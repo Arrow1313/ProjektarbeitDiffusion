@@ -15,8 +15,8 @@
 \tableofcontents
 \section{Inhalt}
 ProjektarbeitDiffusion C++ Projekt:
-\newline
-\textbf{Sourcedateien}:
+
+\subsection{\textbf{Sourcedateien}}
 Teilchen.h;
 Teilchen.cpp;
 Kasten.h;
@@ -31,15 +31,77 @@ Grafikoutput.h;
 Grafikoutput.cpp;
 ProjektarbeitDiffusion.cpp;
 
-\section{Diffusion}
+\subsection{Diffusion}
 Unser Programm soll den Diffusionsvorgang veranschaulichen.
 Es werden wahlweise in einem Kasten, der durch eine Wand mit einem Spalt in zwei Hälften unterteilt ist, zufällig oder manuell Teilchen erzeugt.
 
-\section{Programm starten}
+\subsection{Programm starten}
 Insallieren sie das Programm mit CMake und führen sie die Executable aus.
 Folgen sie nun den Instruktionen des Programms.
+
 \section{Features}
-  
+Mögliche Einstellungen:
+
+\subsection{Einstellungen Teilchen}
+
+\begin{enumerate}
+
+\item Teilchenanzahl
+\newline
+Die Anzahl der Teilchen, die in die Simulation Einfließen sollen, muss zu Beginn festgelegt werden.
+
+\item Teilchen automatisch erstellen
+
+\begin{itemize}
+
+\item Position
+\newline
+Die x und y Koordinaten der automatisch erzeugten Teilchen sind zufällig im rechten Teil des Kastens verteilt, wobei ein Mindestabstand des Mittelpunktes der Teilchen von einem zwanzigstel der Spaltbreite festgelegt ist.
+
+\item Geschwindigkeit
+\newline
+Die Geschwindigkeiten der automatisch erzeugten Teilchen sind in beiden Richtungen zufällig verteilt und beschränkt durch:
+\begin{align*}
+(\frac{1}{20}-\frac{1}{40})*\text{Kastengröße}
+\end{align*}
+Damit ist die Kastenbreite(v$_x$) bzw. Kastenhöhe(v$_y$)
+gemeint. Die Beschränkung ist willkürlich gewählt und kann im Quellcode "Teilchengenerator.cpp" geändert werden.
+\item Radius
+\newline
+Falls der Radius auf automatisch generieren gesetzt wird, werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert.
+\item Masse
+\newline
+Falls die Masse auf automatisch generieren gesetzt wird,
+werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert. (Die Beschränkungen für Radius und Masse können ebenfalls im Quellcode "Teilchengenerator.cpp" konfiguriert werden) 
+
+\end{itemize}
+\end{enumerate}
+\subsection{Anzahl der Simulationen}
+Die Anzahl der Durchläufe oder Simulationen, die mit den gleichen Bedingungen durchgeführt werden sollen, kann kurz nach Start des Programmes festgelegt werden.
+
+\subsection{Einstellungen Kasten}
+\begin{enumerate}
+
+\item Default Kasten
+\newline
+Bevor die Simulation startet, kann gewählt werden, ob man selber einen Kasten "bauen" möchte oder ob mit dem Standartkasten( Breite 100, Höhe 100, Spaltbreite 20 ) simuliert werden soll.
+\footnote{"Die rechte Seite des Kastens ist nur durch den Spalt mit der linken Seite verbunden"}
+\item Kasten selber erstellen
+\newline
+Wenn man den Kasten selber erstellen möchte, kann man Höhe, Breite und Spaltbreite, nachdem man "selber Hand anlegen" gewählt hat, einstellen.
+
+\end{enumerate}
+
+\subsection{Simulationen Plotten}
+Falls die Simulation geplottet werden soll, (es wird mindesten Gnuplot Version 4.6 benötigt)
+kann man das vor dem Start des Rechenprozesses auswählen.
+Damit ist gemeint, dass eine Gif erstellt wird, ein Histogramm und eine Ausgleichskurve, womit die berechneten Daten anschaulich dargestellt werden können.
+Die Gif Datei wird jedes Interation überschrieben.
+Falls man dies vermeiden möchte sollte man nach der jeweiligen Iteration die Gif Datei in ein anderes Verzeichnis kopieren.
+Da die Rechenzeit für das erstellen des Gifs je nach Wahl der Anfangsbedingungen relativ hoch ist, empfiehlet es sich nur einen Plot zu generieren.
+
+\subsection{Zusammenfassung}
+Am Ende des Rechenprozesses werden die wichtigsten Daten nochmal kurz zusammengefasst und der Mittelwert sowie die Randwerte unseres Ausgleichshistogramms aufglistet.
 
 
 
