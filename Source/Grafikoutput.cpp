@@ -4,6 +4,7 @@
  *  Created on: 06.07.2014
  */
 
+#include "Grafikoutput.h"
 
 void Rahmendatei(Kasten Kasten){
 

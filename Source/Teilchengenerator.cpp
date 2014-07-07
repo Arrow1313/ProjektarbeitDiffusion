@@ -1,3 +1,8 @@
+#include <iostream>
+#include "Teilchengenerator.h"
+
+using namespace std;
+
 bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl){
 	bool wahl;
 

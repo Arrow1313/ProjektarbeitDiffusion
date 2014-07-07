@@ -4,6 +4,7 @@
  *  Created on: 06.07.2014
  */
 
+#include "Eingaben.h"
 
 Kasten Eingabe_Kasten(){
 	bool wahl;

@@ -3,7 +3,7 @@
 
 #include "Kasten.h"
 
-/** \class
+/** \class	Teilchen
  *
  * 	\brief Die Klasse stellt Teilchen für den Diffusionsprozess zur verfügung.
  *
@@ -139,28 +139,60 @@ public:
 															 *	Default Konstruktor mit pos_x=0, pos_y=0, v_x=1, v_y=1, radius=1, masse=1 und used=0
 															 */
 
-	Teilchen(double,double,double,double,double,double);
+	Teilchen(double,double,double,double,double,double);	/**	\fn Teilchen(double x, double y, double x_v, double y_v, double r, double m)
+															 *	Mit dem Konstruktor können die Werte der Eigenschaften direkt übergeben werden.
+															 *
+															 *	\param x	X-Koordinate
+															 *	\param y	Y-Koordinate
+															 *	\param x_v	Geschwindigkeit in X-Richtung
+															 *	\param y_v	Geschwindigkeit in Y-Richtung
+															 *	\param r	Radius des Teilchens
+															 *	\param m	Masse des Teilchens
+															 */
 
 
-	void Kasten_Kollision(Kasten);
+	void Kasten_Kollision(Kasten);							/**	\fn	Kasten_Kollision(Kasten k)
+															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
+															 *	kollidiert und ändert die Geschwindigkeit entsprechend
+															 *
+															 *	\param k	Der Kasten, mit dem die Kollision geprüft wird.
+															 */
 
 
-	void Teilchen_Kollision(Teilchen&);
+	void Teilchen_Kollision(Teilchen&);						/**	\fn	Teilchen_Kollision(Teilchen& t)
+															 *	Die Funktion prüft zwei Teilchen miteinander stoßen und ändert die Geschwindigkeiten entsprechend.
+															 *
+															 *	\param t	Das Teilchen mit dem kollision geprüft wird.
+															 */
 
 
-	bool Teilchen_Kollision_b(Teilchen&);
+	bool Teilchen_Kollision_b(Teilchen&);					/**	\fn Teilchen_Kollision_b(Teilchen& t)
+															 *	Die Funktion gibt TRUE zurück, wenn die Teilchen im nächsten Schritt kollidieren würden, sonst FALSE
+															 *
+															 *	\param t	Das Teilchen mit dem kollision geprüft wird.
+															 */
 
 
-	void Spalt_Kollision(Kasten);
+	void Spalt_Kollision(Kasten);							/**	\fn Spalt_Kollision(Kasten k)
+															 *	Die Funktion prüft, ob das Teilchen mit dem Spalt des Kasten kollidiert und ändert die Geschwindigkeiten entsprechend.
+															 *
+															 *	\param k	Der Kasten mit dem die Spaltkollieion geprüft werden soll.
+															 */
 
 
-	double next_x_pos();
+	double next_x_pos();									/** \fn	next_x_pos()
+															 *	Die Funktion liefer die nächste X-Position.
+															 */
 
 
-	double next_y_pos();
+	double next_y_pos();									/** \fn	next_x_pos()
+															 *	Die Funktion liefer die nächste Y-Position.
+															 */
 
 
-	void Bewege();
+	void Bewege();											/**	\fn	Bewege()
+															 *	Berechnet die nächste Positionen und trägt sie ein.
+															 */
 };
 
 #endif /* TEILCHEN_H_ */
