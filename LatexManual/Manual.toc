@@ -1,5 +1,0 @@
-\select@language {ngerman}
-\contentsline {section}{\numberline {1}Inhalt}{1}
-\contentsline {section}{\numberline {2}Diffusion}{1}
-\contentsline {section}{\numberline {3}Programm starten}{1}
-\contentsline {section}{\numberline {4}Features}{1}
