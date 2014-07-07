@@ -12,11 +12,6 @@ using namespace std;
 #define GRAFIKOUTPUT_H_
 
 
-
-
-
-
-
 /**	\fn	Rahmendatei(Kasten k)
  *
  * 	Diese Funktion erstellt die Rahmendatei für den Plot des Gifs und ruft das Script auf.
@@ -34,7 +29,9 @@ void Rahmendatei(Kasten);
  *	\param	anzahl_teilchen	Die Anzahl der Teilchen in dem Array.
  */
 
+
 void Plotdaten(Teilchen [], int);
+
 
 /**	\fn	Plot_verteilung(Teilchen ar_t[],int anzahl_teilchen)
  *
@@ -44,14 +41,17 @@ void Plotdaten(Teilchen [], int);
  *	\param	anzahl_teilchen	Die Anzahl der Teilchen in dem Array.
  */
 
-void Plot_verteilung(Teilchen[],int);
+void Plot_verteilung(Teilchen[],int,int);
+
 
 /**	\fn	Rahmendatei_verteilung()
  *
  * 	Die Funktion erstellt die Plotdatei, für die Verteilung der Teilchen in Abhängigkeit von der Zeit.
+ *
+ * 	\param anzal_teilchen	Anzahl der Teilchen.
  */
 
-void Rahmendatei_verteilung();
+void Rahmendatei_verteilung(int);
 
 
 #endif /* GRAFIKOUTPUT_H_ */

@@ -45,7 +45,7 @@ void Plotdaten(Teilchen ar_t[],int anzahl_teilchen){
 }
 
 
-void Plot_verteilung(Teilchen ar_t[],int anzahl_teilchen){
+void Plot_verteilung(Teilchen ar_t[],int anzahl_teilchen, int iteration){
 	ofstream dat ("Verlauf.dat", ios::app);
 
 	int rechts;
@@ -53,26 +53,25 @@ void Plot_verteilung(Teilchen ar_t[],int anzahl_teilchen){
 
 	Teilchen_verteilung(ar_t, anzahl_teilchen, links, rechts);
 
-	for(int i = 0; i < anzahl_teilchen; i++){
-		dat << i <<  links << rechts << endl;
-	}
+	dat << iteration << "\t" << links << "\t" << rechts << endl;
 
 	dat.close();
 }
 
 
 
-void Rahmendatei_verteilung(){
+void Rahmendatei_verteilung(int anzahl_teilchen){
 	ofstream rahmen ("rahmendatei_verteilung.plot");
 
 		rahmen << "reset" << endl
-			   << "set title \"Zeitliche Verteilung der Teilchen in den Kammern\""
+			   << "set title \"Zeitliche Verteilung der Teilchen in den Kammern\"" << endl
+			   << "set yrange [" << -1 << ":" << anzahl_teilchen+1 << "]" << endl
 			   << "set terminal png size 1280,720" << endl
 			   << "set output \"Verteilung.png\"" << endl
-			   << "plot 'Verlauf.dat' using 1:2 title \"Anzahl der Teilchen auf der linken Seite\", 'Verlauf.dat' using 1:3 title \"Anzahl der Teilchen auf der linke Seite\" " << endl
+			   << "plot 'Verlauf.dat' using 1:2 w l title \"Anzahl der Teilchen auf der linke Seite\", 'Verlauf.dat' using 1:3 w l title \"Anzahl der Teilchen auf der linke Seite\" " << endl
 			   << "set output" << endl;
 
-		system("gnuplot rahmendatei.plot");
+		system("gnuplot rahmendatei_verteilung.plot");
 
 }
 

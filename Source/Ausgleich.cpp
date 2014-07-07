@@ -7,14 +7,7 @@
 #include "Ausgleich.h"
 
 bool Ausgeglichen(Teilchen ar_t [], int anzahl){
-	int ungerade;
 	int count = 0;
-
-	if(anzahl % 2){
-		ungerade = 1;
-	} else {
-		ungerade = 0;
-	}
 
 	for(int i = 0; i < anzahl; i++){
 		if(ar_t[i].get_pos_x() < 0){
@@ -22,8 +15,7 @@ bool Ausgeglichen(Teilchen ar_t [], int anzahl){
 		}
 	}
 
-	if((count - ungerade == anzahl/2)
-		|| (count + ungerade == anzahl/2)){
+	if((count == anzahl/2)){
 		return 1;
 	}
 

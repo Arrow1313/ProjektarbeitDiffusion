@@ -8,7 +8,7 @@
 
 Kasten Eingabe_Kasten(){
 	bool wahl;
-	cout << "Soll der Standartkasten(x=100,y=100,s=20) erstellt werden(0), oder wollen Sie selbst Hand anlegen(1)?" << endl;
+	cout << "Soll der standart Kasten(x=100,y=100,s=20) erstellt werden(0), oder wollen Sie selbst hand anlegen(1)?" << endl;
 	cin >> wahl;
 
 	if(!wahl){
@@ -21,10 +21,10 @@ Kasten Eingabe_Kasten(){
 		double y_laenge;
 		double spalt;
 
-		cout << "Welche Länge soll der Kasten in x-Richtung haben?" << endl;
+		cout << "Welche Länge in x-Richtung soll der Kasten haben?" << endl;
 		cin >> x_laenge;
 
-		cout << "Welche Länge soll der Kasten in y-Richtung haben?" << endl;
+		cout << "Welche Länge in y-Richtung soll der Kastern haben?" << endl;
 		cin >> y_laenge;
 
 		cout << "Welche Breite soll der Spalt haben?" << endl;
@@ -56,11 +56,16 @@ int Eingabe_anzahl_simulationen(){
 
 bool Plotten(){
 	bool plotten;
-	cout << "Soll die nachfolgende Simulation Geplottet werden (1 = Ja, 0 = Nein)? Bitte beachten Sie, dass Gnuplot 4.6 vorrausgesetzt wird." << endl;
+	cout << "Soll für die nachfolgende Simulation, die Bewegungen der Teilchen geplottet werden (1 = Ja, 0 = Nein)? Bitte beachten, dass Gnuplot 4.6 vorrausgesetzt wird.Bitte passen Sie auf, dass der vorherige Plot überschrieben wird." << endl;
 	cin >> plotten;
-	if(plotten){
-		cout << "Achtung, der vorherige Plot wird überschrieben, falls er nicht aus dem Zielverzeichnis entfernt wurde." << endl;
-	}
+
 	return plotten;
 }
 
+bool Plotten_verteilung(){
+	bool plotten_verteilung;
+	cout << "Soll für die nachfolgende Simulation die zeitliche Verteilung der Teilchen geplottet werden (1 = Ja, 0 = Nein)?Bitte passen Sie auf, dass der vorherige Plot überschrieben wird." << endl;
+	cin >> plotten_verteilung;
+
+	return plotten_verteilung;
+}

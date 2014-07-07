@@ -22,9 +22,12 @@ int main() {
 
 	int anzahl_teilchen = Eingabe_anzahl_teilchen();
 	int anzahl_simulation = Eingabe_anzahl_simulationen();
+	int halt = 0;
+	bool halt_b = 0;
 	bool erstesmal = 1;
 	bool next;
 	bool plotten_bahnen;
+	bool plotten_verteilung;
 	unsigned long int anzahl_schritte;
 	unsigned long int anzahl_schritte_max;
 	unsigned long int anzahl_schritte_min;
@@ -39,10 +42,7 @@ int main() {
 
 		plotten_bahnen = Plotten();
 
-		if(plotten_bahnen){
-			system("rm rahmendatei.plot");
-			system("rm Diffusion.dat");
-		}
+		plotten_verteilung = Plotten_verteilung();
 
 		Teilchen ar_t[anzahl_teilchen];
 		if(erstesmal){
@@ -83,10 +83,34 @@ int main() {
 			if(plotten_bahnen){
 				Plotdaten(ar_t, anzahl_teilchen);
 			}
-		}while(!Ausgeglichen(ar_t,anzahl_teilchen));
+			if(plotten_verteilung){
+				Plot_verteilung(ar_t, anzahl_teilchen, anzahl_schritte);
+			}
+
+			if(Ausgeglichen(ar_t,anzahl_teilchen) && !halt_b){
+				halt_b = 1;
+			}
+			if(halt_b){
+				halt++;
+			}
+
+		}while(!Ausgeglichen(ar_t,anzahl_teilchen) && (halt < 10));
+		//Ende der Bewegungsimultaion
 
 		if(plotten_bahnen){
 			Rahmendatei(Kasten);
+		}
+		if(plotten_verteilung){
+			Rahmendatei_verteilung(anzahl_teilchen);
+		}
+
+		if(plotten_bahnen){
+			system("rm rahmendatei.plot");
+			system("rm Diffusion.dat");
+		}
+		if(plotten_verteilung){
+			system("rm Verlauf.dat");
+			system("rm rahmendatei_verteilung.plot");
 		}
 
 		//Auswertung der Simulation
@@ -113,7 +137,7 @@ int main() {
 
 	anzahl_schritte_mittel /= anzahl_simulation;
 
-	//Ergebnisse ausgeben
+	///Ergebnisse ausgeben
 	cout << "Nach " << anzahl_simulation << " Durchlaeufen der Simulation für " << anzahl_teilchen << " Teilchen"
 		 << " ergaben sich die folgenden Werte: Maximum der benötigten Iterationen bis ein Ausgleich erreicht wurde: " << anzahl_schritte_max << " Minimum der "
 		 << " Iterationen bis ein Ausgleich erreicht wurde: " << anzahl_schritte_min << " und ein Mittelwert von " << anzahl_schritte_mittel << " benötigten Iterationen " << endl

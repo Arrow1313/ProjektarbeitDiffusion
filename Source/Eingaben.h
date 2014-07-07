@@ -45,7 +45,15 @@ int Eingabe_anzahl_simulationen();
  *
  */
 
+
 bool Plotten();
+
+/** \fn	Plotten_vereilung()
+ *
+ * 	Die Funktion liefert ein Interface, für die Option, ob der Zeitliche verlauf, für die Verteilung der Teilchen geplottet werden soll.
+ */
+
+bool Plotten_verteilung();
 
 
 /**	\fn	Eingabe_radius_teilchen()
