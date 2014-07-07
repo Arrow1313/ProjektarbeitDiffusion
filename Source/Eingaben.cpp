@@ -11,7 +11,7 @@ Kasten Eingabe_Kasten(){
 	cout << "Soll der standart Kasten(x=100,y=100,s=20) erstellt werden(0), oder wollen Sie selbst hand anlegen(1)?" << endl;
 	cin >> wahl;
 
-	if(wahl){
+	if(!wahl){
 		Kasten* temp_Kasten = new Kasten;
 
 		return *temp_Kasten;

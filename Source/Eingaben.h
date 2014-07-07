@@ -19,7 +19,7 @@ using namespace std;
  *
  */
 
-void Eingabe_Kasten(Kasten&);
+Kasten Eingabe_Kasten();
 
 
 /**	\fn	Eingabe_anzahl_teilchen()

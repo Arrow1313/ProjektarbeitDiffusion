@@ -1,6 +1,7 @@
 #ifndef AUSGLEICH_H_
 #define AUSGLEICH_H_
 
+#include "Teilchen.h"
 
 /**	\fn Ausgeglichen(Teilchen ar_t[], int anzahl)
  * 	Diese Funktion gibt TRUE zurück, wenn sich gleich viele Teilchen links und rechts befinden.

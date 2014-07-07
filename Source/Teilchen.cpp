@@ -72,6 +72,42 @@ void Teilchen::Kasten_Kollision(Kasten k){
 	}
 }
 
+
+void Teilchen::Kasten_Kollison_radius(Kasten Kasten){
+	double abstand_rechts = fabs(this->pos_x) - fabs(Kasten.x_rechts);
+	double abstand_links = fabs(this->pos_x) - fabs(Kasten.x_links);
+	double abstand_oben = fabs(this->pos_y) - fabs(Kasten.y_oben);
+	double abstand_unten = fabs(this->pos_y) - fabs(Kasten.y_unten);
+
+	if(abstand_rechts < this->radius){
+		this->v_x *= -1;
+		this->used = 1;
+		std::cout << "kollison mit der Wand rechts" << std::endl;
+		this->wand_kollisionen++;
+	}
+
+	if(abstand_links < this->radius){
+		this->v_x *= -1;
+		this->used = 1;
+		std::cout << "kollison mit der Wand links" << std::endl;
+		this->wand_kollisionen++;
+	}
+
+	if(abstand_oben < this->radius){
+		this->v_y *= -1;
+		this->used = 1;
+		std::cout << "kollison mit der Wand oben" << std::endl;
+		this->wand_kollisionen++;
+	}
+
+	if(abstand_unten < this->radius){
+		this->v_y *= -1;
+		this->used = 1;
+		std::cout << "kollison mit der Wand unten" << std::endl;
+		this->wand_kollisionen++;
+	}
+}
+
 void Teilchen::Teilchen_Kollision(Teilchen& t){
 	double x_abstand;
 	double y_abstand;

@@ -153,7 +153,17 @@ public:
 
 	void Kasten_Kollision(Kasten);							/**	\fn	Kasten_Kollision(Kasten k)
 															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
-															 *	kollidiert und ändert die Geschwindigkeit entsprechend
+															 *	kollidiert und ändert die Geschwindigkeit entsprechend.
+															 *	Bei dieser Implemetierung wird geguck ob nach einem Iterationsschritt eine Wand überschritten wurde.
+															 *
+															 *	\param k	Der Kasten, mit dem die Kollision geprüft wird.
+															 */
+
+
+	void Kasten_Kollison_radius(Kasten);					/**	\fn	Kasten_Kollision(Kasten k)
+															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
+															 *	kollidiert und ändert die Geschwindigkeit entsprechend.
+															 *	Bei dieser Implementierung wir die Kollision auf grund der Radien aufgelöst.
 															 *
 															 *	\param k	Der Kasten, mit dem die Kollision geprüft wird.
 															 */

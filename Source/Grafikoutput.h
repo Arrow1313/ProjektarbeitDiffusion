@@ -1,11 +1,10 @@
-#include "Kasten.h"
-#include "Teilchen.h"
 #include "fstream"
 #include "iostream"
 #include "stdlib.h"
 #include "stdio.h"
-#include "string.h"
-#include <sstream>
+#include "Kasten.h"
+#include "Teilchen.h"
+#include "Ausgleich.h"
 
 using namespace std;
 
