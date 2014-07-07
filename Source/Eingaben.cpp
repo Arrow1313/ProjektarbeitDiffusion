@@ -8,7 +8,7 @@
 
 Kasten Eingabe_Kasten(){
 	bool wahl;
-	cout << "Soll der standart Kasten(x=100,y=100,s=20) erstellt werden(0), oder wollen Sie selbst hand anlegen(1)?" << endl;
+	cout << "Soll der Standartkasten(x=100,y=100,s=20) erstellt werden(0), oder wollen Sie selbst Hand anlegen(1)?" << endl;
 	cin >> wahl;
 
 	if(!wahl){
@@ -56,7 +56,7 @@ int Eingabe_anzahl_simulationen(){
 
 bool Plotten(){
 	bool plotten;
-	cout << "Soll die nachfolgende Simulation Geplottet werden (1 = Ja, 0 = Nein)? Bitte beachten, dass Gnuplot 4.6 vorrausgesetzt wird." << endl;
+	cout << "Soll die nachfolgende Simulation Geplottet werden (1 = Ja, 0 = Nein)? Bitte beachten Sie, dass Gnuplot 4.6 vorrausgesetzt wird." << endl;
 	cin >> plotten;
 	if(plotten){
 		cout << "Achtung, der vorherige Plot wird überschrieben, falls er nicht aus dem Zielverzeichnis entfernt wurde." << endl;

@@ -116,8 +116,8 @@ int main() {
 	//Ergebnisse ausgeben
 	cout << "Nach " << anzahl_simulation << " Durchlaeufen der Simulation für " << anzahl_teilchen << " Teilchen"
 		 << " ergaben sich die folgenden Werte: Maximum der benötigten Iterationen bis ein Ausgleich erreicht wurde: " << anzahl_schritte_max << " Minimum der "
-		 << "Iterationen bis ein Ausgleich erreicht wurde: " << anzahl_schritte_min << " und ein Mittelwert von " << anzahl_schritte_mittel << "benötigten Iterationen" << endl
-		 << "Für eine Anzahl von: " << anzahl_teilchen << "Teilchen" << endl;
+		 << " Iterationen bis ein Ausgleich erreicht wurde: " << anzahl_schritte_min << " und ein Mittelwert von " << anzahl_schritte_mittel << " benötigten Iterationen " << endl
+		 << " für eine Anzahl von: " << anzahl_teilchen << " Teilchen " << endl;
 
 	return 0;
 }
