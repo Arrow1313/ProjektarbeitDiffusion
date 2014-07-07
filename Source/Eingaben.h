@@ -15,7 +15,7 @@ using namespace std;
 
 /**	\fn	Eingabe_Kasten()
  *
- * 	Dies Funktion liefert ein Interface, mit dem ein Kasten nach gewünschten Werten erstellt werden kann.
+ * 	Die Funktion "Eingabe_Kasten()" liefert ein Interface, mit dem ein Kasten nach gewünschten Werten erstellt werden kann.
  *
  */
 
@@ -24,7 +24,7 @@ Kasten Eingabe_Kasten();
 
 /**	\fn	Eingabe_anzahl_teilchen()
  *
- * 	Mit dieser Funktion wird ein Interface geliefert, mit dem die Anzahl der Teilchen im Kasten eingegeben werden kann.
+ * 	Die Funktion "Eingabe_anzahl_teilchen()" liefert ein Interface , mit dem die Anzahl der Teilchen im Kasten eingegeben werden kann.
  */
 
 int Eingabe_anzahl_teilchen();
@@ -33,7 +33,7 @@ int Eingabe_anzahl_teilchen();
 
 /**	\fn	Eingabe_anzahl_simulationen()
  *
- * 	Die Funktion liefer ein Interface, mit dem eingegeben werden kann wie oft die Simulation wieder holt werden soll.
+ * 	Die Funktion "Eingabe_anzahl_simulationen()" liefert ein Interface, mit dem eingegeben werden kann wie oft die Simulation wiederholt werden soll.
  */
 
 int Eingabe_anzahl_simulationen();
@@ -41,11 +41,20 @@ int Eingabe_anzahl_simulationen();
 
 /**	\fn	Plotten()
  *
- * 	Die Funktion liefer ein Interface, für die Option ob der Durchlauf Graphisch dargestellt werden soll.
+ * 	Die Funktion "Plotten()" liefert ein Interface für die Option, den Durchlauf Graphisch darzustellen.
  *
  */
 
 bool Plotten();
+
+
+/**	\fn	Eingabe_radius_teilchen()
+*
+*	Die Funktion "Eingabe_radius_teilchen()" liefert ein Interface für die Option, den Radius der Teilchen zufällig generieren zu lassen oder auf einen Konstanten Wert zu setzen.
+*
+*/
+
+double Eingabe_radius_teilchen();
 
 #endif /* EINGABEN_H_ */
 

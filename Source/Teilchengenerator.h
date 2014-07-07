@@ -20,7 +20,7 @@ bool Abfrage(Teilchen [],Kasten,int);
  *	Die Funkton fragt ab, auf welche Weise die Teilchen erstellt werden sollen und liefert in dem Array die Teilchen zurück.
  *
  *	\param	ar_t[]	Array mit den Teilchen.
- *	\param	k		Kasten, in dem die Teilchen erstell werden sollen.
+ *	\param	k		Kasten, in dem die Teilchen erstellt werden sollen.
  *	\param	anzahl_teilchen	Anzahl der Teilchen, die sich im Array befinden.
  */
 
@@ -35,10 +35,10 @@ Teilchen Random_Teilchen(Kasten);
 void Teilchen_Array(Teilchen[],Kasten,int);
 
 /**	\fn	Teilchen_Array(Teilchen ar_t[],Kasten k ,int anzahl_teilchen)
- * 	Die Funktion Speichert die Teilchen in dem übergeben Array
+ * 	Die Funktion Speichert die Teilchen in dem übergebenen Array
  *
  *	\param	ar_t[]	Array mit den Teilchen.
- *	\param	k		Kasten, in dem die Teilchen erstell werden sollen.
+ *	\param	k		Kasten, in dem die Teilchen erstellt werden sollen.
  *	\param	anzahl_teilchen	Anzahl der Teilchen, die sich im Array befinden.
  */
 

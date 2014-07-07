@@ -5,7 +5,7 @@
 
 /**	\fn Ausgeglichen(Teilchen ar_t[], int anzahl)
  * 	Diese Funktion gibt TRUE zurück, wenn sich gleich viele Teilchen links und rechts befinden.
- * 	Bei ungerader Teilchenanzahl wird noch der Wert 1 addiert bzw. subtrahiert.
+ * 	Bei ungerader Teilchenanzahl wird der Wert 1 addiert bzw. subtrahiert.
  *
  * 	\param	Teilchen ar_t[] Der Array in dem die Teilchen gespeichert sind.
  * 	\param 	int anzahl Die Anzahl der Teilchen in dem Array.
@@ -14,7 +14,7 @@ bool Ausgeglichen(Teilchen [],int);
 
 /**	\fn Teilchen_verteilung(Teilchen ar_t[], int anzahl_teilchen, int& links, int& rechts)
  *
- * 	Diese Funktion gibt in links und rechts die jeweilige Anzahl der Teilchen auf der entsprechenden Seite
+ * 	Diese Funktion gibt in "links" und "rechts" die jeweilige Anzahl der Teilchen auf der entsprechenden Seite des Kastens aus.
  *
  * 	\param	ar_t[]	Der Array mit den Teilchen
  * 	\param	anzahl_teilchen	Die Anzahl der Teilchen in dem Array
