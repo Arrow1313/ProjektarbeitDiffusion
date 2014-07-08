@@ -70,7 +70,7 @@ int main() {
 			}
 
 			for(int i = 0; i < anzahl_teilchen; i++){
-				ar_t[i].Spalt_Kollision(Kasten);
+				ar_t[i].Spalt_Kollision_exakt(Kasten);
 			}
 
 			for(int i = 0; i < anzahl_teilchen; i++){

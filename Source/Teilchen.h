@@ -160,7 +160,7 @@ public:
 															 */
 
 
-	void Kasten_Kollison_radius(Kasten);					/**	\fn	Kasten_Kollision(Kasten k)
+	void Kasten_Kollision_radius(Kasten);					/**	\fn	Kasten_Kollision(Kasten k)
 															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
 															 *	kollidiert und ändert die Geschwindigkeit entsprechend.
 															 *	Bei dieser Implementierung wir die Kollision auf grund der Radien aufgelöst.
@@ -186,7 +186,13 @@ public:
 	void Spalt_Kollision(Kasten);							/**	\fn Spalt_Kollision(Kasten k)
 															 *	Die Funktion prüft, ob das Teilchen mit dem Spalt des Kasten kollidiert und ändert die Geschwindigkeiten entsprechend.
 															 *
-															 *	\param k	Der Kasten mit dem die Spaltkollieion geprüft werden soll.
+															 *	\param k	Der Kasten mit dem die Spaltkollision geprüft werden soll.
+															 */
+
+	void Spalt_Kollision_exakt(Kasten);						/**	\fn	Spalt_Kollision_exakt(Kasten k)
+															 *	Die Funtkon liefert bessere Kollisionsabfragen, als Spalt_Kollision().
+															 *
+															 *	\param k	Der Kasten mit dem die Spaltkollision geprüft werden soll.
 															 */
 
 

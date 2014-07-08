@@ -43,14 +43,14 @@ double Teilchen::next_y_pos(){
 
 void Teilchen::Kasten_Kollision(Kasten k){
 
-	if(this->pos_x > k.x_rechts && this->next_x_pos() <= k.x_rechts){
+	if(this->pos_x < k.x_rechts && this->next_x_pos() >= k.x_rechts){
 		this->v_x *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand rechts" << std::endl;
 		this->wand_kollisionen++;
 	}
 
-	if(this->pos_x < k.x_links && this->next_x_pos() >= k.x_links){
+	if(this->pos_x > k.x_links && this->next_x_pos() <= k.x_links){
 		this->v_x *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand links" << std::endl;
@@ -83,14 +83,14 @@ void Teilchen::Kasten_Kollision_radius(Kasten Kasten){
 	double abstand_oben_next = this->next_y_pos() + this->radius;
 	double abstand_unten_next = this->next_y_pos() - this->radius;
 
-	if(abstand_rechts > Kasten.x_rechts && abstand_rechts_next <= Kasten.x_rechts){
+	if(abstand_rechts < Kasten.x_rechts && abstand_rechts_next >= Kasten.x_rechts){
 		this->v_x *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand rechts" << std::endl;
 		this->wand_kollisionen++;
 	}
 
-	if(abstand_links < Kasten.x_links && abstand_links_next >= Kasten.x_links){
+	if(abstand_links > Kasten.x_links && abstand_links_next <= Kasten.x_links){
 		this->v_x *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand links" << std::endl;
@@ -104,7 +104,7 @@ void Teilchen::Kasten_Kollision_radius(Kasten Kasten){
 		this->wand_kollisionen++;
 	}
 
-	if(abstand_unten > Kasten.y_unten && abstand_unten <= Kasten.y_unten){
+	if(abstand_unten > Kasten.y_unten && abstand_unten_next <= Kasten.y_unten){
 		this->v_y *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand unten" << std::endl;
@@ -180,6 +180,25 @@ void Teilchen::Spalt_Kollision(Kasten k){
 		}
 	}
 }
+
+void Teilchen::Spalt_Kollision_exakt(Kasten k){
+	double abstand_rechts = this->pos_x + this->radius;
+	double abstand_links = this->pos_x - this->radius;
+	double abstand_rechts_next = this->next_x_pos() + this->radius;
+	double abstand_links_next = this->next_x_pos() - this->radius;
+
+	if((abstand_rechts < 0 && abstand_rechts_next > 0)
+		|| (abstand_links > 0 && abstand_links_next < 0)){
+		if(fabs(this->pos_y) > (k.get_size_spalt()/2)){
+//			std::cout << "Kollsion Spalt" << std::endl;
+			this->v_x *= -1;
+			this->used = 1;
+
+			this->spalt_kollisionen++;
+		}
+	}
+}
+
 
 void Teilchen::Bewege(){
 	this->pos_x += this->dt * this->v_x;
