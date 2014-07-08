@@ -66,7 +66,7 @@ int main() {
 		do{
 
 			for(int i = 0; i < anzahl_teilchen; i++){
-				ar_t[i].Kasten_Kollision(Kasten);
+				ar_t[i].Kasten_Kollision_radius(Kasten);
 			}
 
 			for(int i = 0; i < anzahl_teilchen; i++){

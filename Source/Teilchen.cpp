@@ -50,21 +50,21 @@ void Teilchen::Kasten_Kollision(Kasten k){
 		this->wand_kollisionen++;
 	}
 
-	if(this->pos_x < k.x_links && this->next_x_pos() > k.x_links){
+	if(this->pos_x < k.x_links && this->next_x_pos() >= k.x_links){
 		this->v_x *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand links" << std::endl;
 		this->wand_kollisionen++;
 	}
 
-	if(this->pos_y < k.y_oben && this->next_y_pos() > k.y_oben){
+	if(this->pos_y < k.y_oben && this->next_y_pos() >= k.y_oben){
 		this->v_y *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand oben" << std::endl;
 		this->wand_kollisionen++;
 	}
 
-	if(this->pos_y > k.y_unten && this->next_y_pos() < k.y_unten){
+	if(this->pos_y > k.y_unten && this->next_y_pos() <= k.y_unten){
 		this->v_y *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand unten" << std::endl;
@@ -73,34 +73,38 @@ void Teilchen::Kasten_Kollision(Kasten k){
 }
 
 
-void Teilchen::Kasten_Kollison_radius(Kasten Kasten){
-	double abstand_rechts = fabs(this->pos_x) - fabs(Kasten.x_rechts);
-	double abstand_links = fabs(this->pos_x) - fabs(Kasten.x_links);
-	double abstand_oben = fabs(this->pos_y) - fabs(Kasten.y_oben);
-	double abstand_unten = fabs(this->pos_y) - fabs(Kasten.y_unten);
+void Teilchen::Kasten_Kollision_radius(Kasten Kasten){
+	double abstand_rechts = this->pos_x + this->radius;
+	double abstand_links = this->pos_x - this->radius;
+	double abstand_oben = this->pos_y + this->radius;
+	double abstand_unten = this->pos_y - this->radius;
+	double abstand_rechts_next = this->next_x_pos() + this->radius;
+	double abstand_links_next = this->next_x_pos() - this->radius;
+	double abstand_oben_next = this->next_y_pos() + this->radius;
+	double abstand_unten_next = this->next_y_pos() - this->radius;
 
-	if(abstand_rechts < this->radius){
+	if(abstand_rechts > Kasten.x_rechts && abstand_rechts_next <= Kasten.x_rechts){
 		this->v_x *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand rechts" << std::endl;
 		this->wand_kollisionen++;
 	}
 
-	if(abstand_links < this->radius){
+	if(abstand_links < Kasten.x_links && abstand_links_next >= Kasten.x_links){
 		this->v_x *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand links" << std::endl;
 		this->wand_kollisionen++;
 	}
 
-	if(abstand_oben < this->radius){
+	if(abstand_oben < Kasten.y_oben && abstand_oben_next >= Kasten.y_oben){
 		this->v_y *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand oben" << std::endl;
 		this->wand_kollisionen++;
 	}
 
-	if(abstand_unten < this->radius){
+	if(abstand_unten > Kasten.y_unten && abstand_unten <= Kasten.y_unten){
 		this->v_y *= -1;
 		this->used = 1;
 //		std::cout << "kollison mit der Wand unten" << std::endl;
