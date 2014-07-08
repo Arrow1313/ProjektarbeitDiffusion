@@ -16,7 +16,7 @@
 \section{Inhalt}
 ProjektarbeitDiffusion C++ Projekt:
 
-\subsection{\textbf{Sourcedateien}}
+\subsection{Sourcedateien}
 Teilchen.h;
 Teilchen.cpp;
 Kasten.h;
@@ -56,7 +56,7 @@ Die Anzahl der Teilchen, die in die Simulation Einfließen sollen, muss zu Begin
 
 \item Position
 \newline
-Die x und y Koordinaten der automatisch erzeugten Teilchen sind zufällig im rechten Teil des Kastens verteilt, wobei ein Mindestabstand des Mittelpunktes der Teilchen von einem zwanzigstel der Spaltbreite festgelegt ist.
+Die x und y Koordinaten der automatisch erzeugten Teilchen sind zufällig im rechten Teil des Kastens verteilt, wobei ein Mindestabstand des Mittelpunktes der Teilchen von einem zehntel der Spaltbreite festgelegt ist.
 
 \item Geschwindigkeit
 \newline
@@ -65,14 +65,14 @@ Die Geschwindigkeiten der automatisch erzeugten Teilchen sind in beiden Richtung
 (\frac{1}{20}-\frac{1}{40})*\text{Kastengröße}
 \end{align*}
 Damit ist die Kastenbreite(v$_x$) bzw. Kastenhöhe(v$_y$)
-gemeint. Die Beschränkung ist willkürlich gewählt und kann im Quellcode "Teilchengenerator.cpp" geändert werden.
+gemeint. Die Beschränkung kann im Quellcode "Teilchengenerator.cpp" geändert werden, wobei zu große Geschwindigkeiten bei zu großem dt zu Fehlern führen.
 \item Radius
 \newline
 Falls der Radius auf automatisch generieren gesetzt wird, werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert.
 \item Masse
 \newline
 Falls die Masse auf automatisch generieren gesetzt wird,
-werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert. (Die Beschränkungen für Radius und Masse können ebenfalls im Quellcode "Teilchengenerator.cpp" konfiguriert werden) 
+werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert. (Die Beschränkungen für Radius und Masse können im Quellcode "Teilchengenerator.cpp" konfiguriert werden.  Änderungen können zu Fehlern bei der Ausführung des Programmes führen!) 
 
 \end{itemize}
 \end{enumerate}

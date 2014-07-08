@@ -12,17 +12,14 @@ Inhalt:
 ->README:
 	README.txt
 ->LatexManual:
-	Manual.aux
-	Manual.log
-	Manual.pdf
-	Manual.synctex.gz
 	Manual.tex
-	Manual.toc
 ->Source:
 	Kasten.h		Kasten.cpp
 	Teilchen.h		Teilchen.cpp
+	Teilchengernerator.h	Teilchengernerator.cpp
+	Ausgleich.h		Ausgleich.cpp
+	Grafikoutput.h		Grafikoutput.cpp
+	Eingaben.h		Eingaben.cpp
 				ProjektarbeitDiffusion.cpp
-	Teilchengernerator.h
-	Ausgleich.h
 ->Doxygen:
-	.http
+	Dokumentation des Quellcodes
