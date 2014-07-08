@@ -54,6 +54,24 @@ void Plot_verteilung(Teilchen[],int,int);
 void Rahmendatei_verteilung(int);
 
 
+/**	\fn	Plot_iterations_verteilung(int ar_sim[], int anzahl_simulationen)
+ *
+ * 	Die Funktion speichert die Daten für den Plot der Iterationsverteilung in eine Datei
+ *
+ * 	\param	ar_sim[]	Array mit den benötigten Iterationsschritten.
+ * 	\param	anzahl_simulationen	Die Größe des Arrays.
+ */
+
+void Plot_iterations_verteilung(int[],int);
+
+
+/**	\fn	Rahmendatei_iterations_verteilung();
+ *
+ * 	Die Funktion liefert die Rahmendatei fürs plotten der Iterationsverteilung und ruft sie auf.
+ */
+
+void Rahmendatei_iterations_verteilung();
+
 #endif /* GRAFIKOUTPUT_H_ */
 
 

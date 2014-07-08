@@ -22,12 +22,11 @@ int main() {
 
 	int anzahl_teilchen = Eingabe_anzahl_teilchen();
 	int anzahl_simulation = Eingabe_anzahl_simulationen();
-	int halt = 0;
-	bool halt_b = 0;
 	bool erstesmal = 1;
 	bool next;
 	bool plotten_bahnen;
 	bool plotten_verteilung;
+	bool plotten_iterations_verteilung;
 	unsigned long int anzahl_schritte;
 	unsigned long int anzahl_schritte_max;
 	unsigned long int anzahl_schritte_min;
@@ -38,11 +37,16 @@ int main() {
 
 	int ar_sim[anzahl_simulation];
 
+	//Abragen was geplotte werden soll
+	plotten_bahnen = Plotten();
+
+	plotten_verteilung = Plotten_verteilung();
+
+	plotten_iterations_verteilung = Eingabe_iterations_verteilung();
+
+
 	for(int k = 0; k < anzahl_simulation; k++){
-
-		plotten_bahnen = Plotten();
-
-		plotten_verteilung = Plotten_verteilung();
+		anzahl_schritte = 0;
 
 		Teilchen ar_t[anzahl_teilchen];
 		if(erstesmal){
@@ -56,7 +60,6 @@ int main() {
 			}
 		}
 
-		anzahl_schritte = 0;
 		//Simulation beginnen
 		do{
 
@@ -87,14 +90,8 @@ int main() {
 				Plot_verteilung(ar_t, anzahl_teilchen, anzahl_schritte);
 			}
 
-			if(Ausgeglichen(ar_t,anzahl_teilchen) && !halt_b){
-				halt_b = 1;
-			}
-			if(halt_b){
-				halt++;
-			}
 
-		}while(!Ausgeglichen(ar_t,anzahl_teilchen) && (halt < 10));
+		}while(!Ausgeglichen(ar_t,anzahl_teilchen));
 		//Ende der Bewegungsimultaion
 
 		if(plotten_bahnen){
@@ -129,7 +126,22 @@ int main() {
 				anzahl_schritte_max = anzahl_schritte;
 			}
 		}
+
+		if(plotten_verteilung && plotten_bahnen){
+			cout << "Bitte Speichern die die Plots, wenn Sie sie behalten wollen. ENTER drücken zum fortfahren." << endl;
+			getchar();
+		}
 	}
+
+	//plotten der Itertaionsverteilung
+	if(plotten_iterations_verteilung){
+		Plot_iterations_verteilung(ar_sim,anzahl_simulation);
+		Rahmendatei_iterations_verteilung();
+
+		system("rm iterations_verteilung.dat");
+		system("rm rahmendatei_iterations_verteilung.plot");
+	}
+
 
 	for(int i = 0; i < anzahl_simulation; i++){
 		anzahl_schritte_mittel += ar_sim[i];

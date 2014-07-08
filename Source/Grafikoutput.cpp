@@ -76,3 +76,49 @@ void Rahmendatei_verteilung(int anzahl_teilchen){
 }
 
 
+void Plot_iterations_verteilung(int ar_sim[],int anzahl_sim){
+	ofstream dat ("iterations_verteilung.dat", ios::app);
+
+		//Array für die Daten initialiseren
+		int ar_daten[anzahl_sim][2];
+		for(int i = 0; i < anzahl_sim; i++){
+			ar_daten[i][0] = 0;
+			ar_daten[i][1] = 0;
+		}
+
+		for(int i = 0; i < anzahl_sim; i++){
+			for(int j = 0; j < anzahl_sim; j++){
+				if(ar_daten[j][1] == 0){
+					ar_daten[j][0] = ar_sim[i];
+					ar_daten[j][1]++;
+				}
+				else if(ar_daten[j][0] == ar_sim[i]){
+					ar_daten[j][1]++;
+				}
+			}
+		}
+
+		for(int i = 0; i < anzahl_sim; i++){
+			if(ar_daten[i] != 0){
+				dat <<  ar_daten[i][0] << "\t" << ar_daten[i][0] << endl;
+			}
+		}
+
+		dat.close();
+}
+
+
+
+
+void Rahmendatei_iterations_verteilung(){
+	ofstream rahmen ("rahmendatei_iterations_verteilung.plot");
+
+		rahmen << "reset" << endl
+			   << "set title \"Verteilung der Ierationsdauern\"" << endl
+			   << "set terminal png size 1280,720" << endl
+			   << "set output \"Iterations_verteilung.png\"" << endl
+			   << "plot 'iterations_verteilung.dat' using 1:2 title \"Iterationsverteilung\"" << endl
+			   << "set output" << endl;
+
+		system("gnuplot rahmendatei_iterations_verteilung.plot");
+}
