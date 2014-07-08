@@ -64,5 +64,13 @@ bool Plotten_verteilung();
 
 double Eingabe_radius_teilchen();
 
+
+/**	\fn	Eingabe_iterations_verteilung()
+ *
+ * 	Diese Funktion liefert ein Interface, für die Option, dass die Verteilung der Iterationsdauern geplottet wird.
+ */
+
+bool Eingabe_iterations_verteilung();
+
 #endif /* EINGABEN_H_ */
 

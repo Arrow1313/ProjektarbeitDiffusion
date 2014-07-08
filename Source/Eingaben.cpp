@@ -69,3 +69,15 @@ bool Plotten_verteilung(){
 
 	return plotten_verteilung;
 }
+
+//Eingabe_radien hier einfügen
+
+bool Eingabe_iterations_verteilung(){
+	bool plot_iterations_verteilung;
+	cout << "Soll die Verteilung der Iterationen geplottet werden (1 = Ja, 0 = Nein)?" << endl;
+	cin >> plot_iterations_verteilung;
+
+	return plot_iterations_verteilung;
+
+
+}
