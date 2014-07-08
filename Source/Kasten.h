@@ -5,9 +5,9 @@
 
 /**  \class Kasten
  *
- * \brief Diese Klasse liefert den Kasten in dem die Teilchen sich bewegen.
+ * \brief Diese Klasse liefer den Kasten in dem die Teilchen sich bewegen.
  *
- *  Der Kasten setzt sich aus sechs Wänden zusammen, vier Außenwände und zwei Innenwände für den Spalt.
+ *  Der Kasten setzt sich aus sechs Wänden zusammen, vier außen Wände und zwei innen Wände für den Spalt.
  *  Der Aufbau des Kastens basiert auf auf der Annahme, dass er zum Ursprung symmetrisch ist, dadurch ergben
  *  sich zwei gleich große  Teilkästen.
  */
@@ -15,11 +15,11 @@
 class Kasten {
 private:
 	double size_x; 		/** \var size_x
-						 *	Die Variable gibt die Länge des Kastens in X-Richtung an
+						 *	Die Variable gibt die Länge in X-Richtung an
 						 */
 
 	double size_y;		/** \var size_y
-						 *	Die Variable gibt die Länge des Kastens in Y-Richtung an
+						 *	Die Variable gibt die Länge in Y-Richtung an
 						 */
 
 	double size_spalt;	/** \var size_spalt
@@ -73,13 +73,13 @@ public:
 
 
 	Kasten();										/** \fn Kasten()
-													 *	Initialisiert den Kasten mit den default Werten X-Länge = 100, Y-Länge = 100, Spaltbreite = 20.
+													 *	Initialisiert den Kasten mit den default Werten X-Länge = 100, Y-Länge = 100, Spaltbreicht = 20.
 													 */
 
 	Kasten(double,double,double);					/** \fn Kasten(double x,double y,double s)
 													 *	Mit diesem Konstruktor können die Werte des Kastens direkt übergben werden.
-													 *	\param x Länge des Kastens in X-Richtung
-													 *	\param y Länge des Kastens in Y-Richtung
+													 *	\param x Länge des Kastens in X-Richung
+													 *	\param y Länge des Kastens in Y-Richung
 													 *	\param s Breite des Spaltes
 													 */
 

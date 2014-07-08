@@ -79,46 +79,78 @@ void Rahmendatei_verteilung(int anzahl_teilchen){
 void Plot_iterations_verteilung(int ar_sim[],int anzahl_sim){
 	ofstream dat ("iterations_verteilung.dat", ios::app);
 
-		//Array für die Daten initialiseren
-		int ar_daten[anzahl_sim][2];
-		for(int i = 0; i < anzahl_sim; i++){
-			ar_daten[i][0] = 0;
-			ar_daten[i][1] = 0;
-		}
+	//Array für die Daten initialiseren
+	int ar_daten[anzahl_sim][2];
+	for(int i = 0; i < anzahl_sim; i++){
+		ar_daten[i][0] = 0;
+		ar_daten[i][1] = 0;
+	}
 
-		for(int i = 0; i < anzahl_sim; i++){
-			for(int j = 0; j < anzahl_sim; j++){
-				if(ar_daten[j][1] == 0){
-					ar_daten[j][0] = ar_sim[i];
-					ar_daten[j][1]++;
-					break;
-				}
-				else if(ar_daten[j][0] == ar_sim[i]){
-					ar_daten[j][1]++;
-					break;
-				}
+	for(int i = 0; i < anzahl_sim; i++){
+		for(int j = 0; j < anzahl_sim; j++){
+			if(ar_daten[j][1] == 0){
+				ar_daten[j][0] = ar_sim[i];
+				ar_daten[j][1]++;
+				break;
+			}
+			else if(ar_daten[j][0] == ar_sim[i]){
+				ar_daten[j][1]++;
+				break;
 			}
 		}
+	}
 
-		for(int i = 0; i < anzahl_sim; i++){
-			if(ar_daten[i] != 0){
-				dat <<  ar_daten[i][0] << "\t" << ar_daten[i][1] << endl;
-			}
+	for(int i = 0; i < anzahl_sim; i++){
+		if(ar_daten[i] != 0){
+			dat <<  ar_daten[i][0] << "\t" << ar_daten[i][1] << endl;
 		}
+	}
 
-		dat.close();
+	dat.close();
 }
 
 
 
 
-void Rahmendatei_iterations_verteilung(int max, int min){
+void Rahmendatei_iterations_verteilung(int max, int min, int ar_sim[], int anzahl_sim){
+	int obergrenze;
+	int ar_daten[anzahl_sim][2];
+
+	for(int i = 0; i < anzahl_sim; i++){
+		ar_daten[i][0] = 0;
+		ar_daten[i][1] = 0;
+	}
+
+	for(int i = 0; i < anzahl_sim; i++){
+		for(int j = 0; j < anzahl_sim; j++){
+			if(ar_daten[j][1] == 0){
+				ar_daten[j][0] = ar_sim[i];
+				ar_daten[j][1]++;
+				break;
+			}
+			else if(ar_daten[j][0] == ar_sim[i]){
+				ar_daten[j][1]++;
+				break;
+			}
+		}
+	}
+
+	for(int i = 0; i < anzahl_sim; i++){
+			if(i == 0){
+				obergrenze = ar_daten[i][1];
+			} else {
+				if(obergrenze < ar_daten[i][1]){
+					obergrenze = ar_daten[i][1];
+				}
+			}
+		}
+
 	ofstream rahmen ("rahmendatei_iterations_verteilung.plot");
 
 		rahmen << "reset" << endl
 			   << "set title \"Verteilung der Ierationsdauern\"" << endl
 			   << "set xrange [" << min-50 << ":" << max+50 << "]" << endl
-			   << "set yrange [-1" << ":" << "5" << "]" << endl
+			   << "set yrange [-1" << ":" << obergrenze+1 << "]" << endl
 			   << "set terminal png size 1280,720" << endl
 			   << "set output \"Iterations_verteilung.png\"" << endl
 			   << "plot 'iterations_verteilung.dat' using 1:2 title \"Iterationsverteilung\"" << endl

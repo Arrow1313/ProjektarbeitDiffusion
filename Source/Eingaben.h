@@ -72,5 +72,18 @@ double Eingabe_radius_teilchen();
 
 bool Eingabe_iterations_verteilung();
 
+
+/**	\fn	Eingabe_masse_teilchen()
+ *
+ * 	Die Funktion liefert ein Interface, mit welchem abgefragt werden kann ob man die Masse konstant halten will.
+ *
+ */
+
+double Eingabe_masse_teilchen();
+
+
+
 #endif /* EINGABEN_H_ */
+
+
 

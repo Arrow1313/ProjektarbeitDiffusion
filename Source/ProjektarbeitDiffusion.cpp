@@ -20,6 +20,7 @@ using namespace std;
 
 int main() {
 
+	double masse_param;
 	int anzahl_teilchen = Eingabe_anzahl_teilchen();
 	int anzahl_simulation = Eingabe_anzahl_simulationen();
 	bool erstesmal = 1;
@@ -50,13 +51,14 @@ int main() {
 
 		Teilchen ar_t[anzahl_teilchen];
 		if(erstesmal){
-			next = Abfrage(ar_t,Kasten,anzahl_teilchen);
+			masse_param = Eingabe_masse_teilchen();
+			next = Abfrage(ar_t,Kasten,anzahl_teilchen,masse_param);
 			erstesmal = 0;
 		} else {
 			if(next){
 				Eingabe(anzahl_teilchen,ar_t);
 			} else {
-				Teilchen_Array(ar_t,Kasten,anzahl_teilchen);
+				Teilchen_Array(ar_t,Kasten,anzahl_teilchen,masse_param);
 			}
 		}
 
@@ -136,7 +138,7 @@ int main() {
 	//plotten der Itertaionsverteilung
 	if(plotten_iterations_verteilung){
 		Plot_iterations_verteilung(ar_sim,anzahl_simulation);
-		Rahmendatei_iterations_verteilung();
+		Rahmendatei_iterations_verteilung(anzahl_schritte_max,anzahl_schritte_min,ar_sim,anzahl_simulation);
 
 		system("rm iterations_verteilung.dat");
 		system("rm rahmendatei_iterations_verteilung.plot");

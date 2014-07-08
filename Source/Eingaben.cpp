@@ -71,12 +71,6 @@ bool Plotten_verteilung(){
 }
 
 //Eingabe_radien hier einfügen
-double Eingabe_radius_teilchen(){
-double radius_teilchen = 0;
-cout << " Bitte geben sie den Radius des Teilchens ein (um den Radius zufällig zu generieren, geben sie eine Zahl <= 0 ein) : " << endl;
-cin >> radius_teilchen;
-return radius_teilchen;
-}
 
 bool Eingabe_iterations_verteilung(){
 	bool plot_iterations_verteilung;
@@ -84,6 +78,13 @@ bool Eingabe_iterations_verteilung(){
 	cin >> plot_iterations_verteilung;
 
 	return plot_iterations_verteilung;
+}
 
 
+double Eingabe_masse_teilchen(){
+	double masse;
+	cout << "Bitte geben sie die Masse an, die für alle Teilchen angenommen werden soll, falls sie eine Wert kleiner gleich 0 eingeben, werden die Massen zufällig erstellt." << endl;
+	cin >> masse;
+
+	return masse;
 }

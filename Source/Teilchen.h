@@ -5,11 +5,11 @@
 
 /** \class	Teilchen
  *
- * 	\brief Die Klasse stellt Teilchen für den Diffusionsprozess zur Verfügung.
+ * 	\brief Die Klasse stellt Teilchen für den Diffusionsprozess zur verfügung.
  *
- * 	In dieser Klasse sind alle Teilcheneigenschaften enthalten, so wie Methoden und Variablen zur Verwaltung
+ * 	In dieser Klasse sind alle Teilchen Eingenschaften enthalten, so wie Methoden und Variablen zu Verwaltung
  * 	der Bewegung.
- * 	Es wurden auch Klassenattribute definiert, zur Analyse der Stoßhäufigkeiten.
+ * 	Es wurden auch Klassenatribute definiert, zur analyse des Stoßhäufgikeiten.
  */
 
 class Teilchen {
@@ -44,24 +44,24 @@ private:
 public:
 
 	static double dt;					/** \var dt
-										 *	Gibt den Zeitschritt für die Iterationen an.
-										 *	Für exakte Simulationen sollte dt sehr klein gewählt werden, wobei zu kleines dt Rundungsfehler erzeugt.
+										 *	Gibt den Zeitschritt für die iterationen an.
+										 *	Für exakte Simulationen sollte dt sehr klein gewählt werden.
 										 */
 
 	static int teilchen_kollisionen;	/** \var teilchen_kollisionen
-										 *	Gibt die Anzahl der Teilchen-Teilchen Kollisionen an.
+										 *	Gibt die Anzahl der Teilchen-Teilchen kollisionen an.
 										 */
 
 	static int wand_kollisionen;		/**	\var wand_kollisionen
-										 *	Gibt die Anzahl der Teilchen-Wand Kollisionen an.
+										 *	Gibt die Anzahl der Wand-Teilchen kollisionen an.
 										 */
 
 	static int spalt_kollisionen;		/**	\var spalt_kollisionen
-										 *	Gibt die Anzahl der Teilchen-Spalt Kollisionen an.
+										 *	Gibt die Anzahl der Spalt-Teilchen kollisionen an.
 										 */
 	//getter-Funktion
 	bool get_used(){return used;};		/** \fn get_used()
-										 *	Gibt zurück, ob das Teilchen auf "used" gesetzt ist.
+										 *	Gibt zurück, ob used gesetz ist.
 										 */
 
 
@@ -92,7 +92,7 @@ public:
 
 	//setter-Funktionen
 	void set_used(bool u){used = u;};		/** \fn set_used(bool u)
-	 	 	 	 	 	 	 	 	 	 	 *	Mit der Methode "set_used()" kann die Variable used gesetzt werden.
+	 	 	 	 	 	 	 	 	 	 	 *	Mit der Methode kann die Variable used gesetzt werden.
 	 	 	 	 	 	 	 	 	 	 	 *	\param u Wert von used.
 	 	 	 	 	 	 	 	 	 	 	 */
 
@@ -140,7 +140,7 @@ public:
 															 */
 
 	Teilchen(double,double,double,double,double,double);	/**	\fn Teilchen(double x, double y, double x_v, double y_v, double r, double m)
-															 *	Mit diesem Konstruktor können die Werte der Eigenschaften des Teilchens direkt übergeben werden.
+															 *	Mit dem Konstruktor können die Werte der Eigenschaften direkt übergeben werden.
 															 *
 															 *	\param x	X-Koordinate
 															 *	\param y	Y-Koordinate
@@ -154,7 +154,7 @@ public:
 	void Kasten_Kollision(Kasten);							/**	\fn	Kasten_Kollision(Kasten k)
 															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
 															 *	kollidiert und ändert die Geschwindigkeit entsprechend.
-															 *	Bei dieser Implemetierung wird geguckt ob nach einem Iterationsschritt eine Wand überschritten wurde.
+															 *	Bei dieser Implemetierung wird geguck ob nach einem Iterationsschritt eine Wand überschritten wurde.
 															 *
 															 *	\param k	Der Kasten, mit dem die Kollision geprüft wird.
 															 */
@@ -163,45 +163,45 @@ public:
 	void Kasten_Kollison_radius(Kasten);					/**	\fn	Kasten_Kollision(Kasten k)
 															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
 															 *	kollidiert und ändert die Geschwindigkeit entsprechend.
-															 *	Bei dieser Implementierung wird die Kollision der Teilchen abhängig von den Radien ausgelöst.
+															 *	Bei dieser Implementierung wir die Kollision auf grund der Radien aufgelöst.
 															 *
 															 *	\param k	Der Kasten, mit dem die Kollision geprüft wird.
 															 */
 
 
 	void Teilchen_Kollision(Teilchen&);						/**	\fn	Teilchen_Kollision(Teilchen& t)
-															 *	Die Funktion prüft, ob zwei Teilchen miteinander stoßen und ändert die Geschwindigkeiten entsprechend.
+															 *	Die Funktion prüft zwei Teilchen miteinander stoßen und ändert die Geschwindigkeiten entsprechend.
 															 *
-															 *	\param t	Das Teilchen, das auf Kollision geprüft wird.
+															 *	\param t	Das Teilchen mit dem kollision geprüft wird.
 															 */
 
 
 	bool Teilchen_Kollision_b(Teilchen&);					/**	\fn Teilchen_Kollision_b(Teilchen& t)
 															 *	Die Funktion gibt TRUE zurück, wenn die Teilchen im nächsten Schritt kollidieren würden, sonst FALSE
 															 *
-															 *	\param t	Das Teilchen, dasu auf Kollision geprüft wird.
+															 *	\param t	Das Teilchen mit dem kollision geprüft wird.
 															 */
 
 
 	void Spalt_Kollision(Kasten);							/**	\fn Spalt_Kollision(Kasten k)
-															 *	Die Funktion prüft, ob das Teilchen mit dem Spalt des Kastens kollidiert und ändert die Geschwindigkeiten entsprechend.
+															 *	Die Funktion prüft, ob das Teilchen mit dem Spalt des Kasten kollidiert und ändert die Geschwindigkeiten entsprechend.
 															 *
-															 *	\param k	Der Kasten, mit dem die Spaltkollision geprüft werden soll.
+															 *	\param k	Der Kasten mit dem die Spaltkollieion geprüft werden soll.
 															 */
 
 
 	double next_x_pos();									/** \fn	next_x_pos()
-															 *	Die Funktion liefert die nächste X-Position.
+															 *	Die Funktion liefer die nächste X-Position.
 															 */
 
 
 	double next_y_pos();									/** \fn	next_x_pos()
-															 *	Die Funktion liefert die nächste Y-Position.
+															 *	Die Funktion liefer die nächste Y-Position.
 															 */
 
 
 	void Bewege();											/**	\fn	Bewege()
-															 *	Berechnet die nächsten Positionen und trägt sie ein.
+															 *	Berechnet die nächste Positionen und trägt sie ein.
 															 */
 };
 

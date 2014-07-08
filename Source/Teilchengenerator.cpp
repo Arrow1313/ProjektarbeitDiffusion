@@ -1,9 +1,10 @@
 #include <iostream>
 #include "Teilchengenerator.h"
+#include "Eingaben.h"
 
 using namespace std;
 
-bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl){
+bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl,double masse_param){
 	bool wahl;
 
 	//Methode der Generierung erfragen und einleiten
@@ -13,7 +14,7 @@ bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl){
 	if(wahl){
 		Eingabe(anzahl,ar_t);
 	} else if(!wahl){
-		Teilchen_Array(ar_t,Kasten,anzahl);
+		Teilchen_Array(ar_t,Kasten,anzahl,masse_param);
 	}
 
 	return wahl;
@@ -48,17 +49,17 @@ void Eingabe(int anzahl,Teilchen ar_t[]){
 	}
 }
 
-void Teilchen_Array(Teilchen ar_t[], Kasten Kasten, int anzahl){
+void Teilchen_Array(Teilchen ar_t[], Kasten Kasten, int anzahl,double masse_param){
 
 	bool flag;
 
 	for(int i = 0; i < anzahl; i++){
 		if(i == 0){
-			ar_t[i] = Random_Teilchen(Kasten);
+			ar_t[i] = Random_Teilchen(Kasten,masse_param);
 		}else {
 			flag = 0;
 			do{
-				Teilchen temp_t = Random_Teilchen(Kasten);
+				Teilchen temp_t = Random_Teilchen(Kasten,masse_param);
 				for(int j = 0; j < i; j++){
 					if(temp_t.Teilchen_Kollision_b(ar_t[j])){
 						break;
@@ -74,7 +75,7 @@ void Teilchen_Array(Teilchen ar_t[], Kasten Kasten, int anzahl){
 }//Ende Teilchen_Array
 
 
-Teilchen Random_Teilchen(Kasten Kasten){
+Teilchen Random_Teilchen(Kasten Kasten,double masse_param){
 	srand(time(NULL));
 
 	double pos_x = ((double)rand() / RAND_MAX)*(Kasten.get_size_x()/2-(Kasten.get_size_spalt()/10+0.01));
@@ -82,7 +83,14 @@ Teilchen Random_Teilchen(Kasten Kasten){
 	double v_x = ((double)rand() / RAND_MAX)*(Kasten.get_size_x()/20)-(Kasten.get_size_x()/40);
 	double v_y = ((double)rand() / RAND_MAX)*(Kasten.get_size_y()/20)-(Kasten.get_size_y()/40);
 	double radius = ((double)rand() / RAND_MAX)*(Kasten.get_size_spalt()/10)+0.01;
-	double masse = ((double)rand() / RAND_MAX)*(Kasten.get_size_spalt()/10)+0.01;
+
+	double masse;
+		if(masse_param <= 0){
+			masse = ((double)rand() / RAND_MAX)*(Kasten.get_size_spalt()/10)+0.01;
+		} else {
+			masse = masse_param;
+		}
+
 
 	//Teilchen mit den Randomwerten erstellen
 	Teilchen* neues_teilchen = new Teilchen(pos_x,pos_y,v_x,v_y,radius,masse);
@@ -90,5 +98,3 @@ Teilchen Random_Teilchen(Kasten Kasten){
 	return *neues_teilchen;
 
 }
-
-
