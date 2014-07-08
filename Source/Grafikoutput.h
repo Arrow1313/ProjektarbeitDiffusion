@@ -70,7 +70,7 @@ void Plot_iterations_verteilung(int[],int);
  * 	Die Funktion liefert die Rahmendatei fürs plotten der Iterationsverteilung und ruft sie auf.
  */
 
-void Rahmendatei_iterations_verteilung();
+void Rahmendatei_iterations_verteilung(int,int);
 
 #endif /* GRAFIKOUTPUT_H_ */
 
