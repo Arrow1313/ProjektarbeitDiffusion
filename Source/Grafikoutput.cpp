@@ -12,7 +12,7 @@ void Rahmendatei(Kasten Kasten){
 
 	rahmen << "reset" << endl
 		   << "set notitle" << endl
-		   << "set terminal gif animate delay 2 size 1280,720" << endl
+		   << "set terminal gif animate delay 20 size 1280,720" << endl
 		   << "set output \"Diffusion.gif\"" << endl
 		   << "stats \"Diffusion.dat\" nooutput" << endl
 		   << "unset xtic" << endl
@@ -20,7 +20,7 @@ void Rahmendatei(Kasten Kasten){
 		   << "set samples 1000" << endl
 		   << "set xrange [" << -Kasten.get_size_x()/2 << ":" << Kasten.get_size_x()/2 << "]" << endl
 		   << "set yrange [" << -Kasten.get_size_y()/2 << ":" << Kasten.get_size_y()/2 << "]" << endl
-		   << "do for [i=1:int(STATS_blocks)] {" << endl
+		   << "do for [i=1:int(STATS_blocks):5] {" << endl
 		   << "set arrow from 0," << Kasten.get_size_spalt()/2 << " to 0," << Kasten.get_size_y()/2 << " nohead" << endl
 		   << "set arrow from 0," << -Kasten.get_size_spalt()/2 << " to 0,"<< -Kasten.get_size_y()/2 << " nohead" << endl
 		   << "plot 'Diffusion.dat' using 1:2:3 index ((i-1)) with circles fs solid notitle"  << endl

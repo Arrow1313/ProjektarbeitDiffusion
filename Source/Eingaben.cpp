@@ -70,7 +70,13 @@ bool Plotten_verteilung(){
 	return plotten_verteilung;
 }
 
-//Eingabe_radien hier einfügen
+double Eingabe_radius_teilchen(){
+	double radius;
+	cout << "Bitte geben sie den Radius an, der für alle Teilchen angenommen werden soll, falls sie eine Wert kleiner gleich 0 eingeben, werden die Radien zufällig erstellt." << endl;
+	cin >> radius;
+
+	return radius;
+}
 
 bool Eingabe_iterations_verteilung(){
 	bool plot_iterations_verteilung;

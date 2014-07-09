@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl,double masse_param){
+bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl,double masse_param, double radius_param){
 	bool wahl;
 
 	//Methode der Generierung erfragen und einleiten
@@ -14,7 +14,7 @@ bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl,double masse_param){
 	if(wahl){
 		Eingabe(anzahl,ar_t);
 	} else if(!wahl){
-		Teilchen_Array(ar_t,Kasten,anzahl,masse_param);
+		Teilchen_Array(ar_t,Kasten,anzahl,masse_param,radius_param);
 	}
 
 	return wahl;
@@ -49,17 +49,17 @@ void Eingabe(int anzahl,Teilchen ar_t[]){
 	}
 }
 
-void Teilchen_Array(Teilchen ar_t[], Kasten Kasten, int anzahl,double masse_param){
+void Teilchen_Array(Teilchen ar_t[], Kasten Kasten, int anzahl, double masse_param, double radius_param){
 
 	bool flag;
 
 	for(int i = 0; i < anzahl; i++){
 		if(i == 0){
-			ar_t[i] = Random_Teilchen(Kasten,masse_param);
+			ar_t[i] = Random_Teilchen(Kasten,masse_param,radius_param);
 		}else {
 			flag = 0;
 			do{
-				Teilchen temp_t = Random_Teilchen(Kasten,masse_param);
+				Teilchen temp_t = Random_Teilchen(Kasten,masse_param,radius_param);
 				for(int j = 0; j < i; j++){
 					if(temp_t.Teilchen_Kollision_b(ar_t[j])){
 						break;
@@ -75,14 +75,20 @@ void Teilchen_Array(Teilchen ar_t[], Kasten Kasten, int anzahl,double masse_para
 }//Ende Teilchen_Array
 
 
-Teilchen Random_Teilchen(Kasten Kasten,double masse_param){
+Teilchen Random_Teilchen(Kasten Kasten,double masse_param,double radius_param){
 	srand(time(NULL));
 
 	double pos_x = ((double)rand() / RAND_MAX)*(Kasten.get_size_x()/2-(Kasten.get_size_spalt()/10+0.01));
 	double pos_y = ((double)rand() / RAND_MAX)*(Kasten.get_size_y()-(Kasten.get_size_spalt()/5+0.02))-((Kasten.get_size_y()/2));
 	double v_x = ((double)rand() / RAND_MAX)*(Kasten.get_size_x()/20)-(Kasten.get_size_x()/40);
 	double v_y = ((double)rand() / RAND_MAX)*(Kasten.get_size_y()/20)-(Kasten.get_size_y()/40);
-	double radius = ((double)rand() / RAND_MAX)*(Kasten.get_size_spalt()/10)+0.01;
+
+	double radius;
+			if(radius_param <= 0){
+				radius  = ((double)rand() / RAND_MAX)*(Kasten.get_size_spalt()/30)+0.01;
+			} else {
+				radius = radius_param;
+			}
 
 	double masse;
 		if(masse_param <= 0){

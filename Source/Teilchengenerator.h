@@ -14,7 +14,7 @@
 
 using namespace std;
 
-bool Abfrage(Teilchen [],Kasten,int,double);
+bool Abfrage(Teilchen [],Kasten,int,double,double);
 
 /**	\fn	Abfrage(Teilchen ar_t[],Kasten k ,int anzahl_teilchen)
  *	Die Funkton fragt ab, auf welche Weise die Teilchen erstellt werden sollen und liefert in dem Array die Teilchen zurück.
@@ -24,7 +24,7 @@ bool Abfrage(Teilchen [],Kasten,int,double);
  *	\param	anzahl_teilchen	Anzahl der Teilchen, die sich im Array befinden.
  */
 
-Teilchen Random_Teilchen(Kasten,double);
+Teilchen Random_Teilchen(Kasten,double,double);
 
 /**	\fn	Random_Teilchen(Kasten k)
  * 	Liefert ein zufällig erzeugtes Teilchen, welches in dem übergebenen Kasten liegt.
@@ -32,7 +32,7 @@ Teilchen Random_Teilchen(Kasten,double);
  * 	\param k	Der Kasten, in dem das Teilchen liegen soll.
  */
 
-void Teilchen_Array(Teilchen[],Kasten,int,double);
+void Teilchen_Array(Teilchen[],Kasten,int,double,double);
 
 /**	\fn	Teilchen_Array(Teilchen ar_t[],Kasten k ,int anzahl_teilchen)
  * 	Die Funktion Speichert die Teilchen in dem übergeben Array

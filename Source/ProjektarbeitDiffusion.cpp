@@ -21,6 +21,7 @@ using namespace std;
 int main() {
 
 	double masse_param;
+	double radius_param;
 	int anzahl_teilchen = Eingabe_anzahl_teilchen();
 	int anzahl_simulation = Eingabe_anzahl_simulationen();
 	bool erstesmal = 1;
@@ -51,14 +52,15 @@ int main() {
 
 		Teilchen ar_t[anzahl_teilchen];
 		if(erstesmal){
+			radius_param = Eingabe_radius_teilchen();
 			masse_param = Eingabe_masse_teilchen();
-			next = Abfrage(ar_t,Kasten,anzahl_teilchen,masse_param);
+			next = Abfrage(ar_t,Kasten,anzahl_teilchen,masse_param,radius_param);
 			erstesmal = 0;
 		} else {
 			if(next){
 				Eingabe(anzahl_teilchen,ar_t);
 			} else {
-				Teilchen_Array(ar_t,Kasten,anzahl_teilchen,masse_param);
+				Teilchen_Array(ar_t,Kasten,anzahl_teilchen,masse_param,radius_param);
 			}
 		}
 
@@ -96,10 +98,15 @@ int main() {
 		}while(!Ausgeglichen(ar_t,anzahl_teilchen));
 		//Ende der Bewegungsimultaion
 
+		cout << "Bewegungssimulation abgeschlossen." << endl
+			 << "Beginne plotten der Daten." << endl;
+
 		if(plotten_bahnen){
+			cout << "Plotten der Bahnen." << endl;
 			Rahmendatei(Kasten);
 		}
 		if(plotten_verteilung){
+			cout << "Plotten der Verteilung" << endl;
 			Rahmendatei_verteilung(anzahl_teilchen);
 		}
 
@@ -137,6 +144,7 @@ int main() {
 
 	//plotten der Itertaionsverteilung
 	if(plotten_iterations_verteilung){
+		cout << "Plotten der Iterationsverteilung." << endl;
 		Plot_iterations_verteilung(ar_sim,anzahl_simulation);
 		Rahmendatei_iterations_verteilung(anzahl_schritte_max,anzahl_schritte_min,ar_sim,anzahl_simulation);
 
