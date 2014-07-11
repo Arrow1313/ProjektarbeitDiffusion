@@ -70,6 +70,12 @@ double Eingabe_radius_teilchen();
  * 	Diese Funktion liefert ein Interface, für die Option, dass die Verteilung der Iterationsdauern geplottet wird.
  */
 
+double Eingabe_dt_teilchen();
+/** \fn Eingabe_dt_teilchen
+ *
+ * 	Diese Funktion liefert ein Interface, für die Option, die Schrittweite dt zu ändern.
+ */
+
 bool Eingabe_iterations_verteilung();
 
 

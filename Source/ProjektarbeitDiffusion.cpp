@@ -22,6 +22,7 @@ int main() {
 
 	double masse_param;
 	double radius_param;
+	double dt_param;
 	int anzahl_teilchen = Eingabe_anzahl_teilchen();
 	int anzahl_simulation = Eingabe_anzahl_simulationen();
 	bool erstesmal = 1;
@@ -62,6 +63,13 @@ int main() {
 			} else {
 				Teilchen_Array(ar_t,Kasten,anzahl_teilchen,masse_param,radius_param);
 			}
+		}
+
+		dt_param = Eingabe_dt_teilchen();
+		if(dt_param <= 0){
+			break;
+		} else {
+			ar_t[1].set_dt(dt_param);
 		}
 
 		//Simulation beginnen
