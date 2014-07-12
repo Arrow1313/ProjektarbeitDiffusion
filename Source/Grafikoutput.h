@@ -11,12 +11,17 @@ using namespace std;
 #ifndef GRAFIKOUTPUT_H_
 #define GRAFIKOUTPUT_H_
 
+/**
+ * 	\file Grafikoutput.h
+ *
+ * 	In dieser Datei werden Funktionen deklariert welche die Grafikdateien generieren
+ */
 
-/**	\fn	Rahmendatei_bewegung(Kasten k)
+/**	\fn	Rahmendatei_bewegung(Kasten Kasten)
  *
  * 	Diese Funktion erstellt die Rahmendatei für den Plot des Gifs und ruft das Script auf.
  *
- *	\param k	Kasten für die justierung des Plots
+ *	\param Kasten	Kasten für die justierung des Plots
  */
 
 void Rahmendatei_bewegung(Kasten);
@@ -34,39 +39,40 @@ void Rahmendatei_bewegung(Kasten);
 void Plotdaten_bewegung(Teilchen [], int);
 
 
-/**	\fn	Plot_teilchen_verteilung(Teilchen ar_t[],int anzahl_teilchen)
+/**	\fn	Plot_teilchen_verteilung(Teilchen ar_t[],int anzahl_teilchen, int iteration)
  *
  * 	Diese Funktion liefert die Daten für den Plot der Teilchenverteilung in Abhängigkeit von der Zeit in eine Datei.
  *
  * 	\param ar_t[]	Der Array in dem die Teilchen gespeicher sind.
  *	\param	anzahl_teilchen	Die Anzahl der Teilchen in dem Array.
+ *	\param	iteration	Die Nummer der aktuellen Iteration.
  */
 
 void Plot_teilchen_verteilung(Teilchen[],int,int);
 
 
-/**	\fn	Rahmendatei_teilchen_verteilung()
+/**	\fn	Rahmendatei_teilchen_verteilung(int anzahl_teilchen)
  *
  * 	Die Funktion erstellt die Plotdatei, für die Verteilung der Teilchen in Abhängigkeit von der Zeit.
  *
- * 	\param anzal_teilchen	Anzahl der Teilchen.
+ * 	\param anzahl_teilchen	Anzahl der Teilchen.
  */
 
 void Rahmendatei_teilchen_verteilung(int);
 
 
-/**	\fn	Plot_iterations_verteilung(int ar_sim[], int anzahl_simulationen)
+/**	\fn	Plot_iterations_verteilung(int ar_sim[], int anzahl_sim)
  *
  * 	Die Funktion speichert die Daten für den Plot der Iterationsverteilung in eine Datei
  *
  * 	\param	ar_sim[]	Array mit den benötigten Iterationsschritten.
- * 	\param	anzahl_simulationen	Die Größe des Arrays.
+ * 	\param	anzahl_sim	Die Größe des Arrays.
  */
 
 void Plot_iterations_verteilung(int[],int);
 
 
-/**	\fn	Rahmendatei_iterations_verteilung();
+/**	\fn	Rahmendatei_iterations_verteilung(int max, int min, int ar_sim[], int anzahl_sim);
  *
  * 	Die Funktion liefert die Rahmendatei fürs plotten der Iterationsverteilung und ruft sie auf.
  *

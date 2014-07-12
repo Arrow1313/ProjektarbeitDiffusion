@@ -12,45 +12,61 @@
 #ifndef TEILCHENGENERATOR_H_
 #define TEILCHENGENERATOR_H_
 
+/**
+ * 	\file Teilchengenerator.h
+ *
+ * 	In dieser Datei werden Funktionen deklariert mit welchen das genrieren der Teilchen abgehandelt wird
+ */
+
 using namespace std;
 
-bool Abfrage(Teilchen [],Kasten,int,double,double);
 
-/**	\fn	Abfrage(Teilchen ar_t[],Kasten k ,int anzahl_teilchen)
+
+/**	\fn	Abfrage(Teilchen ar_t[],Kasten Kasten ,int anzahl,double param_masse, double param_radius)
+ *
  *	Die Funkton fragt ab, auf welche Weise die Teilchen erstellt werden sollen und liefert in dem Array die Teilchen zurück.
  *
  *	\param	ar_t[]	Array mit den Teilchen.
- *	\param	k		Kasten, in dem die Teilchen erstell werden sollen.
- *	\param	anzahl_teilchen	Anzahl der Teilchen, die sich im Array befinden.
+ *	\param	Kasten		Kasten, in dem die Teilchen erstell werden sollen.
+ *	\param	anzahl	Anzahl der Teilchen, die sich im Array befinden.
+ *	\param	param_masse	Übergabewert für die Auswahl der Masse aller Teilchen.
+ *	\param	param_radius	Übergabewert für die Auswahl des Radiuses aller Teilchen.
  */
+bool Abfrage(Teilchen [],Kasten,int,double,double);
 
-Teilchen Random_Teilchen(Kasten,double,double);
 
-/**	\fn	Random_Teilchen(Kasten k)
+/**	\fn	Random_Teilchen(Kasten Kasten,double param_masse, double param_radius)
+ *
  * 	Liefert ein zufällig erzeugtes Teilchen, welches in dem übergebenen Kasten liegt.
  *
- * 	\param k	Der Kasten, in dem das Teilchen liegen soll.
+ * 	\param Kasten	Der Kasten, in dem das Teilchen liegen soll.
+ *	\param	param_masse	Übergabewert für die Auswahl der Masse aller Teilchen.
+ *	\param	param_radius	Übergabewert für die Auswahl des Radiuses aller Teilchen.
  */
+Teilchen Random_Teilchen(Kasten,double,double);
 
-void Teilchen_Array(Teilchen[],Kasten,int,double,double);
 
-/**	\fn	Teilchen_Array(Teilchen ar_t[],Kasten k ,int anzahl_teilchen)
+/**	\fn	Teilchen_Array(Teilchen ar_t[],Kasten Kasten ,int anzahl,double param_radius, double param_mass)
+ *
  * 	Die Funktion Speichert die Teilchen in dem übergeben Array
  *
  *	\param	ar_t[]	Array mit den Teilchen.
- *	\param	k		Kasten, in dem die Teilchen erstell werden sollen.
- *	\param	anzahl_teilchen	Anzahl der Teilchen, die sich im Array befinden.
+ *	\param	Kasten		Kasten, in dem die Teilchen erstell werden sollen.
+ *	\param	anzahl	Anzahl der Teilchen, die sich im Array befinden.
+ *	\param	param_masse	Übergabewert für die Auswahl der Masse aller Teilchen.
+ *	\param	param_radius	Übergabewert für die Auswahl des Radiuses aller Teilchen.
  */
+void Teilchen_Array(Teilchen[],Kasten,int,double,double);
 
-void Eingabe_teilchen_werte(int,Teilchen []);
 
-/**	\fn	Eingabe(int anzahl_teilchen, Teilchen ar_t[])
+/**	\fn	Eingabe_teilchen_werte(int anzahl, Teilchen ar_t[])
+ *
  * 	Liefert ein Interface, für die Eingabe der Werte des Teilchens.
  *
  *	\param	ar_t[]	Array mit den Teilchen.
- *	\param	anzahl_teilchen	Anzahl der Teilchen, die sich im Array befinden.
+ *	\param	anzahl	Anzahl der Teilchen, die sich im Array befinden.
  */
-
+void Eingabe_teilchen_werte(int,Teilchen []);
 
 
 #endif /* TEILCHENGENERATOR_H_ */

@@ -12,6 +12,11 @@ using namespace std;
 #ifndef EINGABEN_H_
 #define EINGABEN_H_
 
+/**
+ * 	\file Eingaben.h
+ *
+ * 	In dieser Datei werden Funktionen deklariert welche ein Interaface für Abfragen liefert
+ */
 
 /**	\fn	Eingabe_Kasten()
  *
@@ -48,7 +53,7 @@ int Eingabe_anzahl_simulationen();
 
 bool Plotten_bewegung();
 
-/** \fn	Plotten_vereilung_teilchen()
+/** \fn	Plotten_verteilung_teilchen()
  *
  * 	Die Funktion liefert ein Interface, für die Option, ob der Zeitliche verlauf, für die Verteilung der Teilchen geplottet werden soll.
  */

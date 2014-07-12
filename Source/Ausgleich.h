@@ -3,12 +3,19 @@
 
 #include "Teilchen.h"
 
+/**
+ * \file Ausgleich.h
+ *
+ * 	In dieser Datei werden Funktionen deklariert um zu prüfen, ob sich ein Ausgelichszustand eingestellt hat
+ */
+
 /**	\fn Ausgeglichen(Teilchen ar_t[], int anzahl)
+ *
  * 	Diese Funktion gibt TRUE zurück, wenn sich gleich viele Teilchen links und rechts befinden.
  * 	Bei ungerader Teilchenanzahl wird noch der Wert 1 addiert bzw. subtrahiert.
  *
- * 	\param	Teilchen ar_t[] Der Array in dem die Teilchen gespeichert sind.
- * 	\param 	int anzahl Die Anzahl der Teilchen in dem Array.
+ * 	\param	ar_t[] Der Array in dem die Teilchen gespeichert sind.
+ * 	\param 	anzahl Die Anzahl der Teilchen in dem Array.
  */
 bool Ausgeglichen(Teilchen [],int);
 
