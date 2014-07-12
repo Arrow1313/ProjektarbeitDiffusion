@@ -5,7 +5,7 @@
 \usepackage{lmodern}
 \usepackage[ngerman]{babel}
 \usepackage{amsmath}
- 
+
 \title{Manual}
 \author{Frederik und Henrik}
 \date{\today}
@@ -13,6 +13,7 @@
  
 \maketitle
 \tableofcontents
+\newpage
 \section{Inhalt}
 ProjektarbeitDiffusion C++ Projekt:
 
@@ -36,21 +37,21 @@ Unser Programm soll den Diffusionsvorgang veranschaulichen.
 Es werden wahlweise in einem Kasten, der durch eine Wand mit einem Spalt in zwei Hälften unterteilt ist, zufällig oder manuell Teilchen erzeugt.
 
 \subsection{Programm starten}
-Insallieren sie das Programm mit CMake und führen sie die Executable aus.
+Installieren sie das Programm mit CMake und führen sie die Executable aus.
 Folgen sie nun den Instruktionen des Programms.
 
 \section{Features}
-Mögliche Einstellungen:
+\textbf{Mögliche Einstellungen:}
 
 \subsection{Einstellungen Teilchen}
 
 \begin{enumerate}
 
-\item Teilchenanzahl
+\item \textbf{Teilchenanzahl}
 \newline
 Die Anzahl der Teilchen, die in die Simulation Einfließen sollen, muss zu Beginn festgelegt werden.
 
-\item Teilchen automatisch erstellen
+\item \textbf{Teilchen automatisch erstellen}
 
 \begin{itemize}
 
@@ -66,27 +67,38 @@ Die Geschwindigkeiten der automatisch erzeugten Teilchen sind in beiden Richtung
 \end{align*}
 Damit ist die Kastenbreite(v$_x$) bzw. Kastenhöhe(v$_y$)
 gemeint. Die Beschränkung kann im Quellcode "Teilchengenerator.cpp" geändert werden, wobei zu große Geschwindigkeiten bei zu großem dt zu Fehlern führen.
-\item Radius
+\item Radius auto
 \newline
 Falls der Radius auf automatisch generieren gesetzt wird, werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert.
-\item Masse
+\item Radius fest
+\newline
+Der Radius kann beliebig gewählt werden und wird für alle folgenden Iterationen verwendet.
+\item Masse auto
 \newline
 Falls die Masse auf automatisch generieren gesetzt wird,
-werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert. (Die Beschränkungen für Radius und Masse können im Quellcode "Teilchengenerator.cpp" konfiguriert werden.  Änderungen können zu Fehlern bei der Ausführung des Programmes führen!) 
+werden Zufallszahlen zwischen 0.01 und ca. einem Zehntel der Spaltbreite generiert. (Die Beschränkungen für Radius und Masse können im Quellcode "Teilchengenerator.cpp" konfiguriert werden.  Änderungen können zu Fehlern bei der Ausführung des Programmes führen!)
+\item Masse fest
+\newline
+Die Masse kann beliebig gewählt werden und wird für alle folgenden Iterationen verwendet. 
 
 \end{itemize}
 \end{enumerate}
+
+\subsection{Einstellungen "dt" }
+"dt" bzw. den "Zeitschritt", der für die Berechnungen benutzt wird kann man beliebig wählen, wobei zu große dt zu Fehlern bei der Berechnung der Kollisionen führen können.
+Zu kleine dts führen zu sehr großem Rechenaufwand und im Extremfall zu Rundungsfehlern.
+
 \subsection{Anzahl der Simulationen}
 Die Anzahl der Durchläufe oder Simulationen, die mit den gleichen Bedingungen durchgeführt werden sollen, kann kurz nach Start des Programmes festgelegt werden.
 
 \subsection{Einstellungen Kasten}
 \begin{enumerate}
 
-\item Default Kasten
+\item \textbf{Default Kasten}
 \newline
 Bevor die Simulation startet, kann gewählt werden, ob man selber einen Kasten "bauen" möchte oder ob mit dem Standartkasten( Breite 100, Höhe 100, Spaltbreite 20 ) simuliert werden soll.
 \footnote{"Die rechte Seite des Kastens ist nur durch den Spalt mit der linken Seite verbunden"}
-\item Kasten selber erstellen
+\item \textbf{Kasten von Hand erstellen}
 \newline
 Wenn man den Kasten selber erstellen möchte, kann man Höhe, Breite und Spaltbreite, nachdem man "selber Hand anlegen" gewählt hat, einstellen.
 
