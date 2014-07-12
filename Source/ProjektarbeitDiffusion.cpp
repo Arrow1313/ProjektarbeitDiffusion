@@ -146,6 +146,7 @@ int main() {
 		if(plotten_verteilung && plotten_bahnen){
 			cout << "Bitte Speichern die die Plots, wenn Sie sie behalten wollen. ENTER drücken zum fortfahren." << endl;
 			getchar();
+			getchar();
 		}
 	}
 
