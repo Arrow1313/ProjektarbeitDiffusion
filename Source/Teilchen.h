@@ -59,11 +59,12 @@ public:
 	static int spalt_kollisionen;		/**	\var spalt_kollisionen
 										 *	Gibt die Anzahl der Spalt-Teilchen kollisionen an.
 										 */
-	//getter-Funktionen
-
+	//getter-Funktion
 	double get_dt(){return dt;};		/** \fn get_dt()
-*	gibt zurück, wie groß das verwendete dt ist.
-*/
+	 	 	 	 	 	 	 	 	 	 *	gibt zurück, wie groß das verwendete dt ist.
+	 	 	 	 	 	 	 	 	 	 */
+
+
 	bool get_used(){return used;};		/** \fn get_used()
 										 *	Gibt zurück, ob used gesetz ist.
 										 */
@@ -96,8 +97,9 @@ public:
 
 	//setter-Funktionen
 	void set_dt(double t){dt = t;};		/** \fn set_dt(double t)
-			 *	Mit der Methode kann der Zeitschritt gesetzt werden
-*/
+	 	 	 	 	 	 	 	 	 	 *	Mit der Methode kann der Zeitschritt gesetzt werden
+			 	 	 	 	 	 	 	 */
+
 	void set_used(bool u){used = u;};		/** \fn set_used(bool u)
 	 	 	 	 	 	 	 	 	 	 	 *	Mit der Methode kann die Variable used gesetzt werden.
 	 	 	 	 	 	 	 	 	 	 	 *	\param u Wert von used.
@@ -132,6 +134,7 @@ public:
 	 	 	 	 	 	 	 	 	 	 	 *	Mit der Methode kann die Masse des Teilchens gesetzt werden.
 	 	 	 	 	 	 	 	 	 	 	 *	\param m Die neue Masse.
 	 	 	 	 	 	 	 	 	 	 	 */
+
 
 
 	void output_pos();	/**	\fn output_pos()

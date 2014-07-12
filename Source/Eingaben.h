@@ -39,21 +39,21 @@ int Eingabe_anzahl_teilchen();
 int Eingabe_anzahl_simulationen();
 
 
-/**	\fn	Plotten()
+/**	\fn	Plotten_bewegung()
  *
  * 	Die Funktion "Plotten()" liefert ein Interface für die Option, den Durchlauf Graphisch darzustellen.
  *
  */
 
 
-bool Plotten();
+bool Plotten_bewegung();
 
-/** \fn	Plotten_vereilung()
+/** \fn	Plotten_vereilung_teilchen()
  *
  * 	Die Funktion liefert ein Interface, für die Option, ob der Zeitliche verlauf, für die Verteilung der Teilchen geplottet werden soll.
  */
 
-bool Plotten_verteilung();
+bool Plotten_verteilung_teilchen();
 
 
 /**	\fn	Eingabe_radius_teilchen()
@@ -65,18 +65,12 @@ bool Plotten_verteilung();
 double Eingabe_radius_teilchen();
 
 
-/**	\fn	Eingabe_iterations_verteilung()
+/**	\fn	Plotten_iterations_verteilung()
  *
  * 	Diese Funktion liefert ein Interface, für die Option, dass die Verteilung der Iterationsdauern geplottet wird.
  */
 
-double Eingabe_dt_teilchen();
-/** \fn Eingabe_dt_teilchen
- *
- * 	Diese Funktion liefert ein Interface, für die Option, die Schrittweite dt zu ändern.
- */
-
-bool Eingabe_iterations_verteilung();
+bool Plotten_iterations_verteilung();
 
 
 /**	\fn	Eingabe_masse_teilchen()
@@ -87,6 +81,13 @@ bool Eingabe_iterations_verteilung();
 
 double Eingabe_masse_teilchen();
 
+
+/** \fn Eingabe_dt_teilchen
+ *
+ * 	Diese Funktion liefert ein Interface, für die Option, die Schrittweite dt zu ändern.
+ */
+
+double Eingabe_dt_teilchen();
 
 
 #endif /* EINGABEN_H_ */

@@ -41,11 +41,11 @@ int main() {
 	int ar_sim[anzahl_simulation];
 
 	//Abragen was geplotte werden soll
-	plotten_bahnen = Plotten();
+	plotten_bahnen = Plotten_bewegung();
 
-	plotten_verteilung = Plotten_verteilung();
+	plotten_verteilung = Plotten_verteilung_teilchen();
 
-	plotten_iterations_verteilung = Eingabe_iterations_verteilung();
+	plotten_iterations_verteilung = Plotten_iterations_verteilung();
 
 
 	for(int k = 0; k < anzahl_simulation; k++){
@@ -59,18 +59,17 @@ int main() {
 			erstesmal = 0;
 		} else {
 			if(next){
-				Eingabe(anzahl_teilchen,ar_t);
+				Eingabe_teilchen_werte(anzahl_teilchen,ar_t);
 			} else {
 				Teilchen_Array(ar_t,Kasten,anzahl_teilchen,masse_param,radius_param);
 			}
 		}
 
 		dt_param = Eingabe_dt_teilchen();
-		if(dt_param <= 0){
-			break;
-		} else {
-			ar_t[1].set_dt(dt_param);
-		}
+				if(dt_param > 0){
+					ar_t[1].set_dt(dt_param);
+				}
+
 
 		//Simulation beginnen
 		do{
@@ -96,10 +95,10 @@ int main() {
 			anzahl_schritte++;
 
 			if(plotten_bahnen){
-				Plotdaten(ar_t, anzahl_teilchen);
+				Plotdaten_bewegung(ar_t, anzahl_teilchen);
 			}
 			if(plotten_verteilung){
-				Plot_verteilung(ar_t, anzahl_teilchen, anzahl_schritte);
+				Plot_teilchen_verteilung(ar_t, anzahl_teilchen, anzahl_schritte);
 			}
 
 
@@ -111,11 +110,11 @@ int main() {
 
 		if(plotten_bahnen){
 			cout << "Plotten der Bahnen." << endl;
-			Rahmendatei(Kasten);
+			Rahmendatei_bewegung(Kasten);
 		}
 		if(plotten_verteilung){
 			cout << "Plotten der Verteilung" << endl;
-			Rahmendatei_verteilung(anzahl_teilchen);
+			Rahmendatei_teilchen_verteilung(anzahl_teilchen);
 		}
 
 		if(plotten_bahnen){
