@@ -56,6 +56,7 @@ int main() {
 			radius_param = Eingabe_radius_teilchen();
 			masse_param = Eingabe_masse_teilchen();
 			next = Abfrage(ar_t,Kasten,anzahl_teilchen,masse_param,radius_param);
+			dt_param = Eingabe_dt_teilchen();
 			erstesmal = 0;
 		} else {
 			if(next){
@@ -65,7 +66,6 @@ int main() {
 			}
 		}
 
-		dt_param = Eingabe_dt_teilchen();
 				if(dt_param > 0){
 					ar_t[1].set_dt(dt_param);
 				}
