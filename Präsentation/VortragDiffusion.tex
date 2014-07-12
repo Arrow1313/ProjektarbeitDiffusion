@@ -4,6 +4,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 
+\usepackage{multicol}
+
 \usepackage{dsfont}
 
 \usepackage{graphicx}
@@ -89,11 +91,72 @@
   \frametitle{Kasten} %%Folientitel  
   \begin{figure}
 		\centering
-		\includegraphics[scale = 0.3]{Kasten.png}
+		\includegraphics[scale = 0.27]{Kasten.png}
 		\caption{Attribute und Methoden der Klasse Kasten}
   \end{figure}
   \begin{itemize}
   	\item Liefert Umgebung, für den Diffusionsprozess
+  \end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+	  \frametitle{Kasten} %%Folientitel  
+ \begin{figure}
+		\centering
+		\includegraphics[scale = 0.2]{Teilchen.png}
+		\caption{Attribute und Methoden der Klasse Teilchen}
+  \end{figure}
+  	\begin{itemize}
+	  	\item Liefert Teilchen, mit denen der Diffusionsprozess untersucht wird
+	 	\item Beinhaltet die gesamte Kollisions und Bewegungsberechnung
+	\end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Eingabe.h} %%Folientitel  
+  \begin{figure}
+		\centering
+		\includegraphics[scale = 0.27]{Eingaben.png}
+		\caption{Funktion für die Eingabe}
+  \end{figure}
+  \begin{itemize}
+  	\item Liefert Eingabeinterface
+  \end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Teilchengenerator.h} %%Folientitel  
+  \begin{figure}
+		\centering
+		\includegraphics[scale = 0.27]{Teilchengenerator.png}
+		\caption{Funktionen zum erstellen der Teilchen}
+  \end{figure}
+  \begin{itemize}
+  	\item Liefert Funktionen zum automatischen und händischen generieren der Teilchen
+  \end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Ausgleich.h} %%Folientitel  
+  \begin{figure}
+		\centering
+		\includegraphics[scale = 0.27]{Ausgleich.png}
+		\caption{Funktionen zum feststellen, ob sich ein Gleichgewichtszustand eingestellt hat}
+  \end{figure}
+  \begin{itemize}
+  	\item Prüft, ob der Diffusionsprozess abgeschlossen ist
+  \end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Grafikoutput.h} %%Folientitel  
+  \begin{figure}
+		\centering
+		\includegraphics[scale = 0.27]{Grafikoutput.png}
+		\caption{Funkionen zum darstellen der Simulationsergebnisse}
+  \end{figure}
+  \begin{itemize}
+  	\item Liefert Funktionen um die Daten aus der Simulation Grafisch darzustellen
   \end{itemize}
 \end{frame}
 
