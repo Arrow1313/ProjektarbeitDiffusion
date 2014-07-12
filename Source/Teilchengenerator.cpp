@@ -12,7 +12,7 @@ bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl,double masse_param, double
 	cin >> wahl;
 
 	if(wahl){
-		Eingabe(anzahl,ar_t);
+		Eingabe_teilchen_werte(anzahl,ar_t);
 	} else if(!wahl){
 		Teilchen_Array(ar_t,Kasten,anzahl,masse_param,radius_param);
 	}
@@ -20,7 +20,7 @@ bool Abfrage(Teilchen ar_t[],Kasten Kasten,int anzahl,double masse_param, double
 	return wahl;
 }
 
-void Eingabe(int anzahl,Teilchen ar_t[]){
+void Eingabe_teilchen_werte(int anzahl,Teilchen ar_t[]){
 	double pos_x;
 	double pos_y;
 	double v_x;

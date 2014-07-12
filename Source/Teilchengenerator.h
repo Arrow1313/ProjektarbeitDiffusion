@@ -42,7 +42,7 @@ void Teilchen_Array(Teilchen[],Kasten,int,double,double);
  *	\param	anzahl_teilchen	Anzahl der Teilchen, die sich im Array befinden.
  */
 
-void Eingabe(int,Teilchen []);
+void Eingabe_teilchen_werte(int,Teilchen []);
 
 /**	\fn	Eingabe(int anzahl_teilchen, Teilchen ar_t[])
  * 	Liefert ein Interface, für die Eingabe der Werte des Teilchens.
