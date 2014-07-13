@@ -5,7 +5,7 @@
 
 /**  \class Kasten
  *
- * \brief Diese Klasse liefer den Kasten in dem die Teilchen sich bewegen.
+ * \brief Diese Klasse liefert den Kasten in dem die Teilchen sich bewegen.
  *
  *  Der Kasten setzt sich aus sechs Wänden zusammen, vier außen Wände und zwei innen Wände für den Spalt.
  *  Der Aufbau des Kastens basiert auf auf der Annahme, dass er zum Ursprung symmetrisch ist, dadurch ergben
