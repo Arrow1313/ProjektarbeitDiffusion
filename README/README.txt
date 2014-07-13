@@ -22,4 +22,4 @@ Inhalt:
 	Eingaben.h		Eingaben.cpp
 				ProjektarbeitDiffusion.cpp
 ->Doxygen:
-	Dokumentation des Quellcodes
+	Doxy-Diffusion.Doxyfile
