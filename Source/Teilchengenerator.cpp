@@ -78,8 +78,8 @@ void Teilchen_Array(Teilchen ar_t[], Kasten Kasten, int anzahl, double masse_par
 Teilchen Random_Teilchen(Kasten Kasten,double masse_param,double radius_param){
 	srand(time(NULL));
 
-	double pos_x = ((double)rand() / RAND_MAX)*(Kasten.get_size_x()/2-(Kasten.get_size_spalt()/10+0.1));
-	double pos_y = ((double)rand() / RAND_MAX)*(Kasten.get_size_y()-(Kasten.get_size_spalt()/5+0.2))-((Kasten.get_size_y()/2));
+	double pos_x = ((double)rand() / RAND_MAX)*(Kasten.get_size_x()/2-(Kasten.get_size_spalt()/5+0.02))+Kasten.get_size_spalt()/10+0.01;
+	double pos_y = ((double)rand() / RAND_MAX)*(Kasten.get_size_y()-(Kasten.get_size_spalt()/5+0.02))-((Kasten.get_size_y()/2));
 	double v_x = ((double)rand() / RAND_MAX)*(Kasten.get_size_x()/20)-(Kasten.get_size_x()/40);
 	double v_y = ((double)rand() / RAND_MAX)*(Kasten.get_size_y()/20)-(Kasten.get_size_y()/40);
 
