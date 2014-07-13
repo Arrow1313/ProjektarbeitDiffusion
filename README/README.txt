@@ -1,5 +1,5 @@
 README
-ProjektarbeitDiffusion Version 1.0  30.06.2014
+ProjektarbeitDiffusion Version 1.0  13.07.2014
 ----------------------------------
 Programm:
 ---------
