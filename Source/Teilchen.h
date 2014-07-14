@@ -164,7 +164,7 @@ public:
 	void Kasten_Kollision(Kasten);							/**	\fn	Kasten_Kollision(Kasten k)
 															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
 															 *	kollidiert und ändert die Geschwindigkeit entsprechend.
-															 *	Bei dieser Implemetierung wird geguck ob nach einem Iterationsschritt eine Wand überschritten wurde.
+															 *	Bei dieser Implemetierung wird geguckt ob nach einem Iterationsschritt eine Wand überschritten wurde.
 															 *
 															 *	\param k	Der Kasten, mit dem die Kollision geprüft wird.
 															 */
@@ -173,16 +173,16 @@ public:
 	void Kasten_Kollision_radius(Kasten);					/**	\fn	Kasten_Kollision(Kasten k)
 															 *	Diese Funktion prüft ob das Teilchen mit dem übergebenen Kasten
 															 *	kollidiert und ändert die Geschwindigkeit entsprechend.
-															 *	Bei dieser Implementierung wir die Kollision auf grund der Radien aufgelöst.
+															 *	Bei dieser Implementierung wird die Kollision aufgrund der Radien aufgelöst.
 															 *
 															 *	\param k	Der Kasten, mit dem die Kollision geprüft wird.
 															 */
 
 
 	void Teilchen_Kollision(Teilchen&);						/**	\fn	Teilchen_Kollision(Teilchen& t)
-															 *	Die Funktion prüft zwei Teilchen miteinander stoßen und ändert die Geschwindigkeiten entsprechend.
+															 *	Die Funktion prüft ob zwei Teilchen miteinander stoßen und ändert die Geschwindigkeiten entsprechend.
 															 *
-															 *	\param t	Das Teilchen mit dem kollision geprüft wird.
+															 *	\param t	Das Teilchen mit dem Kollision geprüft wird.
 															 */
 
 
@@ -207,12 +207,12 @@ public:
 
 
 	double next_x_pos();									/** \fn	next_x_pos()
-															 *	Die Funktion liefer die nächste X-Position.
+															 *	Die Funktion liefert die nächste X-Position.
 															 */
 
 
 	double next_y_pos();									/** \fn	next_x_pos()
-															 *	Die Funktion liefer die nächste Y-Position.
+															 *	Die Funktion liefert die nächste Y-Position.
 															 */
 
 
